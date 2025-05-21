@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PT. Kenco Manufactur Indonesia</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-kmi.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+            font-size: 15px;
+        }
+        .content-section p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            display: block;
+            height: 40px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 4px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            position: relative;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 2px;
+            background-color: #FFD700;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 60%;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #FFD700;
+        }
+
+        .subnav {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .subnav a {
+            color: #1E3A8A;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .subnav a:hover {
+            border-bottom: 2px solid #FFD700;
+        }
+
+        main {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        footer {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 2rem;
+            margin-top: 4rem;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-left,
+        .footer-right {
+            flex: 1 1 300px;
+            padding: 1rem;
+        }
+
+        .footer-left h2,
+        .footer-right h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-left h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-media {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .social-media a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-media a i {
+            margin-right: 0.4em;
+        }
+
+        .social-media a:hover {
+            color: #FFD700;
+            transform: translateX(5px);
+        }
+
+        .footer-copyright {
+            background-color: #b1b1b1;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #000;
+        }
+
+        .content-section {
+            display: none;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .content-section img {
+            max-width: 100%;
+            margin: 1rem 0;
+            border-radius: 10px;
+        }
+
+        .subnav-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    animation: fadeInDown 0.5s ease;
+}
+
+.subnav-dropdown label {
+    font-weight: 600;
+    color: #1E3A8A;
+}
+
+.subnav-dropdown select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #1E3A8A;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #1E3A8A;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subnav-dropdown select:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: #1E3A8A;
+                flex-direction: column;
+                padding: 1rem;
+                border-radius: 8px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            .footer-left,
+            .footer-right {
+                padding: 0.5rem 1rem;
+            }
+
+            .subnav {
+                background-color: #f9f9f9;
+                margin: 2rem 0;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .subnav a {
+                color: #1E3A8A;
+                font-weight: 600;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-bottom: 2px solid transparent;
+                transition: all 0.3s ease;
+            }
+
+            .subnav a:hover {
+                border-bottom: 2px solid #FFD700;
+            }
+
+            /* Footer responsive tweaks */
+            footer {
+                font-size: 0.9rem;
+                padding: 1.5rem 1rem;
+            }
+
+            .footer-left h2,
+            .footer-right h2 {
+                font-size: 1.2rem;
+            }
+
+            .footer-left h3 {
+                font-size: 1rem;
+            }
+
+            .footer-right .social-media {
+                gap: 0.3rem;
+            }
+
+            .social-media a {
+                font-size: 0.95rem;
+            }
+
+            .footer-copyright {
+                font-size: 0.75rem;
+                padding: 0.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            header {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .subnav-dropdown {
+                flex-direction: column;
+                gap: 0.5rem;
+                margin: 1rem 0;
+            }
+
+            .subnav-dropdown label {
+                font-size: 0.95rem;
+            }
+
+            .subnav-dropdown select {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .content-section {
+                padding: 1rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .content-section p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .content-section img {
+                margin: 0.5rem 0;
+            }
+
+            .footer-left h2,
+            .footer-right h2 {
+                font-size: 1rem;
+            }
+
+            .footer-left h3 {
+                font-size: 0.9rem;
+            }
+
+            .footer-left p,
+            .footer-right p,
+            .footer-right a {
+                font-size: 0.85rem;
+            }
+
+            .social-media a {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- The rest of your HTML remains unchanged -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo-kmi-removebg-preview.png" alt="PT. Kenco" />
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav-menu">
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="produk.html">Produk</a>
+            <a href="bisnis.html">Bisnis Kami</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="subnav-dropdown">
+    <label for="filterSelect">Filter By:</label>
+    <select id="filterSelect">
+        <option value="sejarah">Sejarah Perusahaan</option>
+        <option value="visi-misi">Visi & Misi</option>
+        <option value="struktur">Struktur Organisasi</option>
+        <option value="penghargaan">Penghargaan</option>
+    </select>
+</div>
+    <main>
+        <section class="hero">
+            <div id="sejarah" class="content-section active">
+                <h2><u>Sejarah Perusahaan</u></h2>
+                <img src="assets/img/WhatsApp Image 2025-05-18 at 20.15.52.jpeg" alt="Sejarah Perusahaan" />
+                <p>PT. Kenco Manufactur Indonesia didirikan pada tahun 2020 dan bergerak di bidang manufaktur dies, jig,
+                    serta part manufaktur stamping untuk komponen otomotif sepeda motor dan mobil. Berlokasi di Jl.
+                    Lambang Jaya No. 9, Lambangjaya, Kec. Tambun Selatan, Kabupaten Bekasi, perusahaan
+                    ini hadir sebagai bagian dari pertumbuhan industri otomotif di Indonesia yang dinamis dan
+                    kompetitif.
+
+                    Sejak awal berdirinya, PT. Kenco Manufactur Indonesia telah mengedepankan kualitas, ketepatan, dan
+                    efisiensi produksi sebagai nilai utama dalam setiap proses kerja. Dengan didukung oleh tenaga ahli
+                    yang berpengalaman, PT. Kenco mampu memproduksi berbagai jenis dies
+                    dan jig yang presisi untuk memenuhi standar tinggi industri otomotif, baik dari segi fungsionalitas
+                    maupun daya tahan.
+
+                    Perusahaan terus berinovasi dalam meningkatkan proses produksi serta mengadopsi praktik manajemen
+                    mutu yang ketat, guna memastikan kepuasan pelanggan dan keberlanjutan operasional. Komitmen terhadap
+                    layanan pelanggan, kualitas produk, dan pengiriman tepat waktu menjadi landasan utama dalam menjalin
+                    kemitraan strategis dengan berbagai perusahaan otomotif nasional dan regional.
+
+                    Dengan posisi strategis di kawasan industri Bekasi, serta dukungan sumber daya manusia yang
+                    kompeten, PT. Kenco Manufactur Indonesia menargetkan diri untuk menjadi salah satu mitra terpercaya
+                    dalam penyediaan komponen manufaktur otomotif, sekaligus turut mendukung penguatan industri nasional
+                    di tengah persaingan global.</p>
+            </div>
+            <div id="struktur" class="content-section">
+                <h2><u>Struktur Organisasi</u></h2>
+                <img src="assets/img/WhatsApp Image 2025-05-18 at 20.15.52.jpeg" alt="Sejarah Perusahaan" />
+                <p></p>
+            </div>
+            <div id="visi-misi" class="content-section">
+                <h2><u>Visi & Misi</u></h2>
+                <img src="assets/img/visi-misi.jpg" alt="Visi dan Misi" />
+                <p><strong>Visi:</strong> Menjadi perusahaan manufaktur unggulan dan terpercaya secara global.<br>
+                    <strong>Misi:</strong> Memberikan solusi terbaik melalui inovasi, kualitas, dan layanan terbaik.
+                </p>
+            </div>
+            <div id="penghargaan" class="content-section">
+                <h2><u>Penghargaan dan Sertifikasi</u></h2>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <img src="assets/img/Quality Control Circle_page-0001.jpg" alt="Sertifikat 1"
+                            style="width: 100%; border-radius: 8px;" />
+                        <h2 style="font-size: 1rem; margin-top: 0.5rem;">Partcipant QCC Vendor 2024</h2>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Oleh PT. Dharma Polimetal Tbk.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Informasi Kontak</h2>
+                <h3>PT. Kenco Manufactur Indonesia</h3>
+                <p><strong><u>Head Office</u></strong></p>
+                <p><strong>Alamat:</strong> Jl. Lambang Jaya No.9, Lambangjaya, Kec. Tambun Sel., Kabupaten Bekasi, Jawa
+                    Barat 17510</p>
+                <p><strong>Telepon:</strong> (021) 123-4567</p>
+                <p><strong>Faks:</strong> (021) 765-4321</p>
+            </div>
+            <div class="footer-right">
+                <h2>Follow Us</h2>
+                <div class="social-media">
+                    <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                    <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                    <a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-copyright">
+        <p>&copy; 2025 PT. Kenco Manufactur Indonesia. All rights reserved.</p>
+    </div>
+
+    <script>
+    function toggleMenu() {
+        document.getElementById('nav-menu').classList.toggle('active');
+    }
+
+    const links = document.querySelectorAll('nav a');
+    const currentPage = window.location.pathname.split('/').pop();
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // Ganti logika subnav jadi select filter
+    const filterSelect = document.getElementById('filterSelect');
+    const sections = document.querySelectorAll('.content-section');
+
+    filterSelect.addEventListener('change', () => {
+        const selected = filterSelect.value;
+
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        const target = document.getElementById(selected);
+        if (target) {
+            target.classList.add('active');
+        }
+    });
+</script>
+</body>
+
+</html>
