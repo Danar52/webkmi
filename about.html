@@ -22,6 +22,7 @@
             scroll-behavior: smooth;
             font-size: 15px;
         }
+
         .content-section p {
             font-size: 0.95rem;
             line-height: 1.6;
@@ -201,46 +202,48 @@
         }
 
         .subnav-dropdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 2rem 0;
-    animation: fadeInDown 0.5s ease;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            animation: fadeInDown 0.5s ease;
+        }
 
-.subnav-dropdown label {
-    font-weight: 600;
-    color: #1E3A8A;
-}
+        .subnav-dropdown label {
+            font-weight: 600;
+            color: #1E3A8A;
+        }
 
-.subnav-dropdown select {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: 2px solid #1E3A8A;
-    border-radius: 8px;
-    background-color: #fff;
-    color: #1E3A8A;
-    cursor: pointer;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
+        .subnav-dropdown select {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: 2px solid #1E3A8A;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #1E3A8A;
+            cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.subnav-dropdown select:focus {
-    outline: none;
-    border-color: #FFD700;
-    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-}
+        .subnav-dropdown select:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -346,6 +349,7 @@
                 padding: 0.5rem;
             }
         }
+
         @media (max-width: 480px) {
             body {
                 font-size: 14px;
@@ -438,14 +442,14 @@
     </header>
 
     <div class="subnav-dropdown">
-    <label for="filterSelect">Filter By:</label>
-    <select id="filterSelect">
-        <option value="sejarah">Sejarah Perusahaan</option>
-        <option value="visi-misi">Visi & Misi</option>
-        <option value="struktur">Struktur Organisasi</option>
-        <option value="penghargaan">Penghargaan</option>
-    </select>
-</div>
+        <label for="filterSelect">Filter By:</label>
+        <select id="filterSelect">
+            <option value="sejarah">Sejarah Perusahaan</option>
+            <option value="visi-misi">Visi & Misi</option>
+            <option value="struktur">Struktur Organisasi</option>
+            <option value="penghargaan">Penghargaan</option>
+        </select>
+    </div>
     <main>
         <section class="hero">
             <div id="sejarah" class="content-section active">
@@ -527,35 +531,35 @@
     </div>
 
     <script>
-    function toggleMenu() {
-        document.getElementById('nav-menu').classList.toggle('active');
-    }
-
-    const links = document.querySelectorAll('nav a');
-    const currentPage = window.location.pathname.split('/').pop();
-    links.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
         }
-    });
 
-    // Ganti logika subnav jadi select filter
-    const filterSelect = document.getElementById('filterSelect');
-    const sections = document.querySelectorAll('.content-section');
-
-    filterSelect.addEventListener('change', () => {
-        const selected = filterSelect.value;
-
-        sections.forEach(section => {
-            section.classList.remove('active');
+        const links = document.querySelectorAll('nav a');
+        const currentPage = window.location.pathname.split('/').pop();
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
         });
 
-        const target = document.getElementById(selected);
-        if (target) {
-            target.classList.add('active');
-        }
-    });
-</script>
+        // Ganti logika subnav jadi select filter
+        const filterSelect = document.getElementById('filterSelect');
+        const sections = document.querySelectorAll('.content-section');
+
+        filterSelect.addEventListener('change', () => {
+            const selected = filterSelect.value;
+
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const target = document.getElementById(selected);
+            if (target) {
+                target.classList.add('active');
+            }
+        });
+    </script>
 </body>
 
 </html>
