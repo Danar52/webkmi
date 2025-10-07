@@ -4,52 +4,52 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PT. Kenco Manufactur Indonesia</title>
+    <title>Tentang Kami | PT. Kenco Manufactur Indonesia</title>
     <link rel="icon" type="image/png" href="assets/img/favicon-kmi.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
         }
 
         body {
-            background-color: #f9f9f9;
+            background-color: #F0F2F5;
             color: #333;
             scroll-behavior: smooth;
             font-size: 15px;
         }
-
         .content-section p {
             font-size: 0.95rem;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* --- Header Section --- */
         header {
             background-color: #1E3A8A;
             color: white;
-            margin-top: 15px;
-            margin-left: 15px;
-            margin-right: 15px;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
-            top: 0;
+            top: 1.5rem;
             z-index: 1000;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
         }
 
         .logo img {
             display: block;
-            height: 40px;
+            height: 48px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
         }
 
         .hamburger {
@@ -59,130 +59,309 @@
         }
 
         .hamburger div {
-            width: 25px;
+            width: 28px;
             height: 3px;
-            background: white;
-            margin: 4px;
+            background: #fff;
+            margin: 5px;
+            transition: 0.3s;
         }
 
         nav {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
             position: relative;
             text-decoration: none;
-            color: white;
+            color: #fff;
             font-weight: 500;
             padding: 0.5rem 0;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.2s ease;
+            font-size: 1.05rem;
         }
 
         nav a::after {
             content: '';
             position: absolute;
             left: 50%;
-            bottom: 0;
+            bottom: -8px;
             transform: translateX(-50%);
             width: 0%;
-            height: 2px;
+            height: 3px;
             background-color: #FFD700;
+            border-radius: 2px;
             transition: width 0.3s ease;
         }
 
         nav a:hover::after,
         nav a.active::after {
-            width: 60%;
+            width: 80%;
         }
 
         nav a:hover,
         nav a.active {
             color: #FFD700;
+            transform: translateY(-2px);
+            font-weight: 700;
         }
 
-        .subnav {
-            margin: 2rem 0;
+        /* --- About Section --- */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 3rem;
+            gap: 4rem;
+            background-color: #fff;
+            margin: 4rem auto;
+            border-radius: 12px;
+            max-width: calc(100% - 3rem);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 400px;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            color: #222;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 100px;
+            height: 4px;
+            background-color: #1E3A8A;
+            border-radius: 2px;
+        }
+
+        .about-content p {
+            font-size: 1.15rem;
+            color: #444;
+            margin-bottom: 1.8rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.01);
+        }
+
+        .award-section {
+            display: flex;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 3rem;
+            gap: 4rem;
+            background-color: #fff;
+            margin: 4rem auto;
+            border-radius: 12px;
+            max-width: calc(100% - 3rem);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .subnav a {
-            color: #1E3A8A;
-            font-weight: 600;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
+        .award-content {
+            flex: 1;
+            min-width: 400px;
+            max-width: 600px;
+            text-align: left;
         }
 
-        .subnav a:hover {
-            border-bottom: 2px solid #FFD700;
+        .award-content h2 {
+            font-size: 3rem;
+            color: #222;
+            margin-bottom: 2rem;
+            position: relative;
         }
 
-        main {
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        footer {
+        .award-content h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 100px;
+            height: 4px;
             background-color: #1E3A8A;
+            border-radius: 2px;
+        }
+
+        .award-content p {
+            font-size: 1.15rem;
+            color: #444;
+            margin-bottom: 1.8rem;
+        }
+
+        .award-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .award-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: opacity 1s ease;
+        }
+
+        /* Dot indicator */
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #1E3A8A;
+        }
+
+        /* --- Footer Section --- */
+        footer {
+            background-color: #1A2B5B;
             color: white;
-            padding: 2rem;
-            margin-top: 4rem;
-            animation: slideUp 1s ease-in-out;
+            padding: 4rem 3rem 2rem;
+            margin-top: 5rem;
+            animation: slideUp 1.5s ease;
         }
 
         .footer-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .footer-left,
-        .footer-right {
-            flex: 1 1 300px;
+        .footer-info,
+        .footer-links,
+        .footer-social {
+            flex: 1 1 280px;
             padding: 1rem;
+            text-align: left;
         }
 
-        .footer-left h2,
-        .footer-right h2 {
+        .footer-info h3,
+        .footer-links h3,
+        .footer-social h3 {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
         }
 
-        .footer-left h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+        .footer-info p,
+        .contact-details p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            color: #c9d6ff;
+        }
+
+        .contact-details {
+            margin-top: 1.5rem;
+        }
+
+        .contact-details p i {
+            margin-right: 0.8em;
+            color: #FFD700;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            color: #c9d6ff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links ul li a:hover {
+            color: #FFD700;
+            transform: translateX(5px);
         }
 
         .social-media {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 1rem;
         }
 
         .social-media a {
-            color: white;
+            color: #c9d6ff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            transition: transform 0.3s ease, color 0.3s ease;
             display: inline-flex;
             align-items: center;
-            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .social-media a i {
-            margin-right: 0.4em;
+            padding-right: 0.8em;
+            font-size: 1.1rem;
+            color: #FFD700;
         }
 
         .social-media a:hover {
+            transform: translateX(8px);
             color: #FFD700;
-            transform: translateX(5px);
         }
 
-        .footer-copyright {
-            background-color: #b1b1b1;
+        .footer-bottom {
+            flex-basis: 100%;
             text-align: center;
             padding: 1rem;
             font-size: 0.9rem;
@@ -209,48 +388,46 @@
         }
 
         .subnav-dropdown {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 2rem 0;
-            animation: fadeInDown 0.5s ease;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    animation: fadeInDown 0.5s ease;
+}
 
-        .subnav-dropdown label {
-            font-weight: 600;
-            color: #1E3A8A;
-        }
+.subnav-dropdown label {
+    font-weight: 600;
+    color: #1E3A8A;
+}
 
-        .subnav-dropdown select {
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            border: 2px solid #1E3A8A;
-            border-radius: 8px;
-            background-color: #fff;
-            color: #1E3A8A;
-            cursor: pointer;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
+.subnav-dropdown select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #1E3A8A;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #1E3A8A;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .subnav-dropdown select:focus {
-            outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-        }
+.subnav-dropdown select:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -275,154 +452,107 @@
             }
         }
 
-        @media (max-width: 600px) {
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            header {
+                padding: 1rem 1.5rem;
+                max-width: calc(100% - 2rem);
+                margin: 1rem auto 0;
+            }
+
+            nav {
+                gap: 1.5rem;
+            }
+
+            .about-section {
+                flex-direction: column;
+                padding: 3rem 2rem;
+                gap: 3rem;
+                max-width: calc(100% - 2rem);
+            }
+
+            .about-content,
+            .about-image {
+                text-align: center;
+            }
+
+            .about-content h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-info,
+            .footer-links,
+            .footer-social {
+                padding: 1rem 0;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+                top: 1rem;
+                max-width: calc(100% - 1.5rem);
+            }
+
             nav {
                 display: none;
                 position: absolute;
-                top: 60px;
-                right: 20px;
-                background: #1E3A8A;
+                top: 70px;
+                right: 15px;
+                background: #fff;
                 flex-direction: column;
-                padding: 1rem;
-                border-radius: 8px;
+                padding: 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                width: 180px;
+                text-align: center;
+                border: 1px solid #eee;
             }
 
             nav.active {
                 display: flex;
             }
 
+            nav a {
+                padding: 0.8rem 0;
+                font-size: 1rem;
+                color: #555;
+            }
+
             .hamburger {
                 display: flex;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                padding: 1rem 0;
-                gap: 1rem;
-            }
-
-            .footer-left,
-            .footer-right {
-                padding: 0.5rem 1rem;
-            }
-
-            .subnav {
-                background-color: #f9f9f9;
-                margin: 2rem 0;
-                display: flex;
-                justify-content: center;
-                gap: 2rem;
-                flex-wrap: wrap;
-            }
-
-            .subnav a {
-                color: #1E3A8A;
-                font-weight: 600;
-                text-decoration: none;
-                padding: 0.5rem 1rem;
-                border-bottom: 2px solid transparent;
-                transition: all 0.3s ease;
-            }
-
-            .subnav a:hover {
-                border-bottom: 2px solid #FFD700;
-            }
-
-            /* Footer responsive tweaks */
-            footer {
-                font-size: 0.9rem;
-                padding: 1.5rem 1rem;
-            }
-
-            .footer-left h2,
-            .footer-right h2 {
-                font-size: 1.2rem;
-            }
-
-            .footer-left h3 {
-                font-size: 1rem;
-            }
-
-            .footer-right .social-media {
-                gap: 0.3rem;
-            }
-
-            .social-media a {
-                font-size: 0.95rem;
-            }
-
-            .footer-copyright {
-                font-size: 0.75rem;
-                padding: 0.5rem;
             }
         }
 
         @media (max-width: 480px) {
-            body {
-                font-size: 14px;
-            }
-
-            header {
-                padding: 0.8rem 1rem;
-            }
-
             .logo img {
-                height: 30px;
+                height: 40px;
             }
 
-            nav a {
-                font-size: 0.9rem;
+            .about-section {
+                padding: 2rem 1rem;
+                margin: 2rem auto;
+                max-width: calc(100% - 1rem);
             }
 
-            .subnav-dropdown {
-                flex-direction: column;
-                gap: 0.5rem;
-                margin: 1rem 0;
+            .about-content h2 {
+                font-size: 2rem;
             }
 
-            .subnav-dropdown label {
-                font-size: 0.95rem;
+            footer {
+                padding: 2.5rem 1rem 1rem;
             }
 
-            .subnav-dropdown select {
-                font-size: 0.9rem;
-                padding: 0.4rem 0.8rem;
-            }
-
-            .content-section {
-                padding: 1rem;
-            }
-
-            .content-section h2 {
-                font-size: 1.2rem;
-            }
-
-            .content-section p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-
-            .content-section img {
-                margin: 0.5rem 0;
-            }
-
-            .footer-left h2,
-            .footer-right h2 {
-                font-size: 1rem;
-            }
-
-            .footer-left h3 {
-                font-size: 0.9rem;
-            }
-
-            .footer-left p,
-            .footer-right p,
-            .footer-right a {
-                font-size: 0.85rem;
-            }
-
-            .social-media a {
-                font-size: 0.85rem;
+            .footer-bottom {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -440,7 +570,7 @@
         </div>
         <nav id="nav-menu">
             <a href="index.html">Beranda</a>
-            <a href="about.html">Tentang Kami</a>
+            <a href="about.html" class="active">Tentang Kami</a>
             <a href="produk.html">Produk</a>
             <a href="bisnis.html">Bisnis Kami</a>
             <a href="kontak.html">Kontak</a>
@@ -448,14 +578,14 @@
     </header>
 
     <div class="subnav-dropdown">
-        <label for="filterSelect">Filter By:</label>
-        <select id="filterSelect">
-            <option value="sejarah">Sejarah Perusahaan</option>
-            <option value="visi-misi">Visi & Misi</option>
-            <option value="struktur">Struktur Organisasi</option>
-            <option value="penghargaan">Penghargaan</option>
-        </select>
-    </div>
+    <label for="filterSelect">Filter By:</label>
+    <select id="filterSelect">
+        <option value="sejarah">Sejarah Perusahaan</option>
+        <option value="visi-misi">Visi & Misi</option>
+        <option value="struktur">Struktur Organisasi</option>
+        <option value="penghargaan">Penghargaan</option>
+    </select>
+</div>
     <main>
         <section class="hero">
             <div id="sejarah" class="content-section active">
@@ -511,17 +641,29 @@
 
     <footer>
         <div class="footer-container">
-            <div class="footer-left">
-                <h2>Informasi Kontak</h2>
+            <div class="footer-info">
                 <h3>PT. Kenco Manufactur Indonesia</h3>
-                <p><strong><u>Head Office</u></strong></p>
-                <p><strong>Alamat:</strong> Jl. Lambang Jaya No.9, Lambangjaya, Kec. Tambun Sel., Kabupaten Bekasi, Jawa
-                    Barat 17510</p>
-                <p><strong>Telepon:</strong> (021) 123-4567</p>
-                <p><strong>Faks:</strong> (021) 765-4321</p>
+                <p>Mendedikasikan diri untuk presisi dan inovasi dalam setiap komponen, mendukung kemajuan industri
+                    otomotif.</p>
+                <div class="contact-details">
+                    <p><i class="bi bi-geo-alt-fill"></i> Jl. Lambang Jaya No.9, Lambangjaya, Kec. Tambun Sel.,
+                        Kabupaten Bekasi, Jawa Barat 17510</p>
+                    <p><i class="bi bi-telephone-fill"></i> (021) 123-4567</p>
+                    <p><i class="bi bi-printer-fill"></i> (021) 765-4321</p>
+                </div>
             </div>
-            <div class="footer-right">
-                <h2>Follow Us</h2>
+            <div class="footer-links">
+                <h3>Tautan Cepat</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html" class="active">Tentang Kami</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="bisnis.html">Bisnis Kami</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Ikuti Kami</h3>
                 <div class="social-media">
                     <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
                     <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
@@ -529,43 +671,42 @@
                     <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PT. Kenco Manufactur Indonesia. Hak Cipta Dilindungi.</p>
+            </div>
         </div>
     </footer>
-
-    <div class="footer-copyright">
-        <p>&copy; 2025 PT. Kenco Manufactur Indonesia. All rights reserved.</p>
-    </div>
 
     <script>
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
         }
 
-        const links = document.querySelectorAll('nav a');
-        const currentPage = window.location.pathname.split('/').pop();
-        links.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            }
+    const links = document.querySelectorAll('nav a');
+    const currentPage = window.location.pathname.split('/').pop();
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // Ganti logika subnav jadi select filter
+    const filterSelect = document.getElementById('filterSelect');
+    const sections = document.querySelectorAll('.content-section');
+
+    filterSelect.addEventListener('change', () => {
+        const selected = filterSelect.value;
+
+        sections.forEach(section => {
+            section.classList.remove('active');
         });
 
-        // Ganti logika subnav jadi select filter
-        const filterSelect = document.getElementById('filterSelect');
-        const sections = document.querySelectorAll('.content-section');
-
-        filterSelect.addEventListener('change', () => {
-            const selected = filterSelect.value;
-
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            const target = document.getElementById(selected);
-            if (target) {
-                target.classList.add('active');
-            }
-        });
-    </script>
+        const target = document.getElementById(selected);
+        if (target) {
+            target.classList.add('active');
+        }
+    });
+</script>
 </body>
 
 </html>
