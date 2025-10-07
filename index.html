@@ -499,20 +499,25 @@ footer {
         font-size: 2.5rem;
     }
     .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.7rem;
+        align-items: stretch;
+        text-align: left;
+        max-width: 100%;
     }
     .footer-info,
     .footer-links,
     .footer-social {
-        padding: 1rem 0;
-        text-align: center;
+        padding: 1rem 0.5rem;
+        text-align: left;
+        min-width: 0;
+        box-sizing: border-box;
     }
     .footer-info h3,
     .footer-links h3,
     .footer-social h3 {
-        text-align: center;
+        text-align: left;
     }
     .contact-details p i,
     .social-media a i {
@@ -526,8 +531,10 @@ footer {
         padding-left: 0;
     }
     .footer-bottom {
+        grid-column: 1 / span 3;
         padding-top: 1.5rem;
         margin-top: 1.5rem;
+        text-align: center;
     }
 }
 
@@ -651,22 +658,27 @@ footer {
         margin-top: 2rem;
     }
     .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.7rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.3rem;
+        align-items: stretch;
+        text-align: left;
         max-width: 100%;
     }
     .footer-info,
     .footer-links,
     .footer-social {
-        padding: 0.2rem 0;
-        text-align: center;
+        padding: 0.2rem 0.2rem;
+        text-align: left;
+        min-width: 0;
+        box-sizing: border-box;
     }
     .footer-info h3,
     .footer-links h3,
     .footer-social h3 {
         font-size: 1rem;
         margin-bottom: 0.7rem;
+        text-align: left;
     }
     .footer-info p,
     .contact-details p,
@@ -684,10 +696,12 @@ footer {
         gap: 0.5rem;
     }
     .footer-bottom {
+        grid-column: 1 / span 3;
         font-size: 0.68rem;
         padding-top: 0.7rem;
         margin-top: 0.7rem;
         border-top: 1px solid rgba(255,255,255,0.10);
+        text-align: center;
     }
 }
 
@@ -757,13 +771,27 @@ footer {
         margin-top: 1rem;
     }
     .footer-container {
-        gap: 0.3rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.15rem;
+        align-items: stretch;
+        text-align: left;
+        max-width: 100%;
+    }
+    .footer-info,
+    .footer-links,
+    .footer-social {
+        padding: 0.1rem 0.07rem;
+        text-align: left;
+        min-width: 0;
+        box-sizing: border-box;
     }
     .footer-info h3,
     .footer-links h3,
     .footer-social h3 {
-        font-size: 0.97rem;
-        margin-bottom: 0.4rem;
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+        text-align: left;
     }
     .footer-info p,
     .contact-details p,
@@ -772,27 +800,29 @@ footer {
         font-size: 0.7rem;
     }
     .footer-links ul li {
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.2rem;
     }
     .footer-bottom {
+        grid-column: 1 / span 3;
         font-size: 0.62rem;
         padding-top: 0.4rem;
         margin-top: 0.4rem;
+        text-align: center;
     }
 }
 </style>
 
 <body>
-    <header>
-        <a href="index.html" class="logo">
+    <header id="main-header">
+        <a href="index.html" class="logo" tabindex="0">
             <img src="assets/img/logo-kmi-removebg-preview.png" alt="PT. Kenco" />
         </a>
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" id="hamburger-btn" onclick="toggleMenu()" tabindex="0" aria-label="Buka menu navigasi" aria-expanded="false">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <nav id="nav-menu">
+        <nav id="nav-menu" aria-label="Navigasi utama">
             <a href="index.html" class="active">Beranda</a>
             <a href="about.html">Tentang Kami</a>
             <a href="produk.html">Produk</a>
@@ -813,15 +843,15 @@ footer {
     </section>
 
     <section class="about-section">
+        <div class="about-image">
+            <img src="assets/img/kantor-kenco.jpg" alt="Kantor PT. Kenco Manufactur Indonesia">
+        </div>
         <div class="about-content">
             <h2>Tentang PT. Kenco Manufactur Indonesia</h2>
             <p>Berdiri sejak 2005, PT. Kenco Manufactur Indonesia telah menjadi pemain kunci dalam industri manufaktur presisi. Kami menggabungkan inovasi teknologi dengan keahlian tim yang berpengalaman untuk menciptakan solusi terbaik bagi klien kami. Dedikasi kami terhadap kualitas dan kepuasan pelanggan adalah pondasi dari setiap proyek yang kami kerjakan.</p>
             <p>Dari desain awal hingga produksi akhir, setiap langkah dilakukan dengan standar tertinggi, memastikan setiap produk yang meninggalkan fasilitas kami adalah cerminan dari komitmen kami terhadap keunggulan.</p>
             <a href="about.html" class="btn-secondary">Lihat Profil Lengkap</a>
         </div>
-        <div class="about-image">
-            <img src="assets/img/kantor-kenco.jpg" alt="Kantor PT. Kenco Manufactur Indonesia">
-            </div>
     </section>
 
     <section class="parallax-section" id="parallax" style="background-image: url('assets/img/parallax-bg-1.jpg');">
@@ -867,12 +897,12 @@ footer {
     </footer>
 
     <script>
+        // Typing effect
         const typingWords = ["Presisi", "Inovasi", "Kualitas", "Keunggulan"];
         let typingIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
         const typingText = document.getElementById("typing-text");
-
         function typeEffect() {
             const currentWord = typingWords[typingIndex];
             if (isDeleting) {
@@ -882,7 +912,6 @@ footer {
                 charIndex++;
                 typingText.textContent = currentWord.substring(0, charIndex);
             }
-
             if (!isDeleting && charIndex === currentWord.length) {
                 isDeleting = true;
                 setTimeout(typeEffect, 2000);
@@ -894,18 +923,16 @@ footer {
                 setTimeout(typeEffect, isDeleting ? 70 : 120);
             }
         }
-
         typeEffect();
 
+        // Parallax background images
         const parallaxImages = [
             'assets/img/parallax-bg-1.jpg',
             'assets/img/parallax-bg-2.jpg',
             'assets/img/parallax-bg-3.jpg'
         ];
-
         let currentImage = 0;
         const parallax = document.getElementById('parallax');
-
         function preloadImages(urls, callback) {
             let loadedCount = 0;
             urls.forEach((url) => {
@@ -918,7 +945,6 @@ footer {
                     }
                 };
                 img.onerror = () => {
-                    console.error('Failed to load image:', url);
                     loadedCount++;
                     if (loadedCount === urls.length) {
                         callback();
@@ -926,31 +952,96 @@ footer {
                 };
             });
         }
-
         function changeParallaxBackground() {
             parallax.style.backgroundImage = `url('${parallaxImages[currentImage]}')`;
+            parallax.style.transition = "background-image 1.2s cubic-bezier(0.4,0,0.2,1)";
             currentImage = (currentImage + 1) % parallaxImages.length;
         }
-
         preloadImages(parallaxImages, () => {
             changeParallaxBackground();
             setInterval(changeParallaxBackground, 8000);
         });
-        
+
+        // Navbar toggle for mobile
         function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('active');
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+            const hamburger = document.getElementById('hamburger-btn');
+            hamburger.setAttribute('aria-expanded', nav.classList.contains('active'));
         }
 
+        // Navbar active link highlight
         const links = document.querySelectorAll('nav a');
         const pathSegments = window.location.pathname.split('/');
         const currentPage = pathSegments[pathSegments.length - 1] || 'index.html';
-
         links.forEach(link => {
             if (link.getAttribute('href') === currentPage) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
             }
+        });
+
+        // Navbar style on scroll (transparent to solid)
+        const header = document.getElementById('main-header');
+        let lastScroll = 0;
+        function handleHeaderScroll() {
+            const scrollY = window.scrollY || window.pageYOffset;
+            if (scrollY > 30) {
+                header.style.backgroundColor = "#1E3A8A";
+                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.13)";
+                header.style.borderRadius = "0 0 12px 12px";
+                header.style.top = "0";
+                header.style.transition = "background 0.35s, box-shadow 0.35s, top 0.25s";
+            } else {
+                header.style.backgroundColor = "rgba(30,58,138,0.7)";
+                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
+                header.style.borderRadius = "12px";
+                header.style.top = "";
+                header.style.transition = "background 0.35s, box-shadow 0.35s, top 0.25s";
+            }
+            lastScroll = scrollY;
+        }
+        window.addEventListener('scroll', handleHeaderScroll);
+        window.addEventListener('DOMContentLoaded', handleHeaderScroll);
+
+        // Close nav menu on clicking outside (mobile)
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('nav-menu');
+            const hamburger = document.getElementById('hamburger-btn');
+            if (window.innerWidth <= 992 && nav.classList.contains('active')) {
+                if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                    nav.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+
+        // Keyboard accessibility for hamburger
+        document.getElementById('hamburger-btn').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Animate hero on load (fade in)
+        window.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.hero-content').style.opacity = '0';
+            setTimeout(function() {
+                document.querySelector('.hero-content').style.transition = 'opacity 0.8s cubic-bezier(0.4,0,0.2,1)';
+                document.querySelector('.hero-content').style.opacity = '1';
+            }, 200);
+        });
+
+        // Button interaction animation
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('touchend', function() {
+                btn.style.transform = '';
+            });
         });
     </script>
 </body>
