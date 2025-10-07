@@ -1,112 +1,107 @@
-<!DOCTYPE html>
-<html lang="id">
+/* Base styles for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* SEMUA TEXT MENGGUNAKAN POOPINS */
+    font-family: 'Poppins', Arial, sans-serif; 
+}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PT. Kenco Manufactur Indonesia</title>
-    <link rel="icon" type="image/png" href="assets/img/favicon-kmi.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" /> 
-</head>
+body {
+    background-color: #F0F2F5; /* Lighter, modern background */
+    color: #333;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-<style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', Arial, sans-serif;
-    }
+/* --- Header Section (Navbar) --- */
+header {
+    background-color: #1E3A8A;
+    padding: 1rem 2.5rem; /* Adjusted padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 1.5rem; /* Added margin from the top */
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Stronger, professional shadow */
+    transition: background-color 0.3s ease, top 0.3s ease, border-radius 0.3s ease;
+    border-radius: 12px; /* Rounded corners for the header */
+    max-width: calc(100% - 3rem); /* Margin from left/right */
+    margin: 1.5rem auto 0 auto; /* Centered with top margin */
+}
 
-    body {
-      background-color: #F0F2F5;
-      color: #333;
-      scroll-behavior: smooth;
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+.logo img {
+    display: block;
+    height: 48px;
+    transition: transform 0.3s ease;
+}
 
-    /* --- Header Section --- */
-    header {
-      background-color: #1E3A8A;
-      padding: 1rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 1.5rem;
-      z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border-radius: 12px;
-      max-width: calc(100% - 3rem);
-      margin: 1.5rem auto 0;
-      transition: background-color 0.3s ease, top 0.3s ease, border-radius 0.3s ease;
-    }
+.logo:hover img {
+    transform: scale(1.05);
+}
 
-    .logo img {
-      display: block;
-      height: 48px;
-      transition: transform 0.3s ease;
-    }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
 
-    .logo:hover img {
-      transform: scale(1.05);
-    }
+.hamburger div {
+    width: 28px;
+    height: 3px;
+    background: #FFFFFF;
+    margin: 5px;
+    transition: 0.3s;
+}
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
+nav {
+    display: flex;
+    gap: 2.5rem;
+}
 
-    .hamburger div {
-      width: 28px;
-      height: 3px;
-      background: #fff;
-      margin: 5px;
-      transition: 0.3s;
-    }
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 1.05rem;
+}
 
-    nav {
-      display: flex;
-      gap: 2.5rem;
-    }
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 3px;
+    background-color: #FFD700;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
 
-    nav a {
-      position: relative;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease, transform 0.2s ease;
-      font-size: 1.05rem;
-    }
+nav a:hover::after {
+    width: 80%;
+}
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -8px;
-      transform: translateX(-50%);
-      width: 0%;
-      height: 3px;
-      background-color: #FFD700;
-      border-radius: 2px;
-      transition: width 0.3s ease;
-    }
+nav a:hover {
+    color: #FFD700;
+    transform: translateY(-2px);
+}
 
-    nav a:hover::after,
-    nav a.active::after {
-      width: 80%;
-    }
+nav a.active {
+    color: #FFD700;
+    font-weight: 700;
+}
 
-    nav a:hover,
-    nav a.active {
-      color: #FFD700;
-      transform: translateY(-2px);
-      font-weight: 700;
-    }
+nav a.active::after {
+    width: 80%;
+}
 
 /* --- Hero Section --- */
 .hero {
@@ -148,6 +143,7 @@
 }
 
 .hero h1 {
+    /* MENGHAPUS FONT LORA */
     font-family: 'Poppins', sans-serif; 
     font-size: 4rem;
     margin-bottom: 1.5rem;
@@ -220,6 +216,7 @@
 }
 
 .about-content h2 {
+    /* MENGHAPUS FONT LORA */
     font-family: 'Poppins', sans-serif;
     font-size: 3rem;
     color: #222;
@@ -318,6 +315,7 @@
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     font-size: 3.2rem;
     font-weight: bold;
+    /* MENGHAPUS FONT LORA */
     font-family: 'Poppins', sans-serif;
     text-align: center;
     padding: 2rem;
@@ -356,6 +354,7 @@ footer {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: #FFD700;
+    /* MENGHAPUS FONT LORA */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -442,7 +441,94 @@ footer {
     color: inherit;
 }
 
+/* --- Tambahkan atau pastikan CSS ini ada di style.css Anda --- */
 
+/* Style untuk konten yang berganti (display block/none) */
+.content-section {
+    display: none;
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: justify;
+    animation: fadeIn 0.5s ease-in-out;
+    background-color: #FFFFFF; /* Latar belakang bersih untuk konten */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+    margin-bottom: 2rem;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.content-section h2 {
+    font-size: 2rem; /* Ukuran H2 yang konsisten */
+    color: #1E3A8A;
+    border-bottom: 3px solid #FFD700; /* Garis bawah elegan */
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.content-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+/* Style untuk Dropdown Filter */
+.subnav-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    margin: 2rem 0;
+    animation: fadeInDown 0.5s ease;
+    flex-wrap: wrap; /* Penting untuk responsif */
+}
+
+.subnav-dropdown label {
+    font-weight: 700;
+    color: #1E3A8A;
+    font-size: 1.1rem;
+}
+
+.subnav-dropdown select {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid #1E3A8A;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #1E3A8A;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-width: 250px;
+}
+
+.subnav-dropdown select:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Responsive untuk Dropdown */
+@media (max-width: 600px) {
+    .subnav-dropdown {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+    .subnav-dropdown select {
+        width: 90%;
+        min-width: unset;
+    }
+    .content-section {
+        padding: 1.5rem;
+    }
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+}
 
 /* --- Keyframes & Animations --- */
 @keyframes blink {
@@ -670,179 +756,3 @@ footer {
         font-size: 0.7rem;
     }
 }
-</style>
-
-<body>
-    <header>
-        <a href="index.html" class="logo">
-            <img src="assets/img/logo-kmi-removebg-preview.png" alt="PT. Kenco" />
-        </a>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <nav id="nav-menu">
-            <a href="index.html" class="active">Beranda</a>
-            <a href="about.html">Tentang Kami</a>
-            <a href="produk.html">Produk</a>
-            <a href="bisnis.html">Bisnis Kami</a>
-            <a href="kontak.html">Kontak</a>
-        </nav>
-    </header>
-
-    <section class="hero" id="home" style="background-image: url('assets/img/hero-bg.jpg');">
-        <div class="hero-content">
-            <h1>
-                <span id="typing-text" class="typing-highlight"></span><br>PT. Kenco Manufactur Indonesia
-            </h1>
-            <p>
-                Kami adalah perusahaan yang bergerak di bidang dies, jig, dan part stamping** untuk komponen otomotif sepeda motor dan mobil. Kami berkomitmen memberikan produk presisi tinggi dengan kualitas terbaik, layanan profesional, dan pengiriman tepat waktu untuk mendukung industri otomotif nasional.
-            </p>
-        </div>
-    </section>
-
-    <section class="about-section">
-        <div class="about-content">
-            <h2>Tentang PT. Kenco Manufactur Indonesia</h2>
-            <p>Berdiri sejak 2005, PT. Kenco Manufactur Indonesia telah menjadi pemain kunci dalam industri manufaktur presisi. Kami menggabungkan inovasi teknologi dengan keahlian tim yang berpengalaman untuk menciptakan solusi terbaik bagi klien kami. Dedikasi kami terhadap kualitas dan kepuasan pelanggan adalah pondasi dari setiap proyek yang kami kerjakan.</p>
-            <p>Dari desain awal hingga produksi akhir, setiap langkah dilakukan dengan standar tertinggi, memastikan setiap produk yang meninggalkan fasilitas kami adalah cerminan dari komitmen kami terhadap keunggulan.</p>
-            <a href="about.html" class="btn-secondary">Lihat Profil Lengkap</a>
-        </div>
-        <div class="about-image">
-            <img src="assets/img/kantor-kenco.jpg" alt="Kantor PT. Kenco Manufactur Indonesia">
-            </div>
-    </section>
-
-    <section class="parallax-section" id="parallax" style="background-image: url('assets/img/parallax-bg-1.jpg');">
-        <div class="parallax-overlay">
-            “Precision in Every Part, Progress in Every Step.”
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>PT. Kenco Manufactur Indonesia</h3>
-                <p>Mendedikasikan diri untuk presisi dan inovasi dalam setiap komponen, mendukung kemajuan industri otomotif.</p>
-                <div class="contact-details">
-                    <p><i class="bi bi-geo-alt-fill"></i> Jl. Lambang Jaya No.9, Lambangjaya, Kec. Tambun Sel., Kabupaten Bekasi, Jawa Barat 17510</p>
-                    <p><i class="bi bi-telephone-fill"></i> (021) 123-4567</p>
-                    <p><i class="bi bi-printer-fill"></i> (021) 765-4321</p>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3>Tautan Cepat</h3>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="produk.html">Produk</a></li>
-                    <li><a href="bisnis.html">Bisnis Kami</a></li>
-                    <li><a href="kontak.html">Kontak</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Ikuti Kami</h3>
-                <div class="social-media">
-                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i> Facebook</a>
-                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i> Instagram</a>
-                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i> Twitter</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 PT. Kenco Manufactur Indonesia. Hak Cipta Dilindungi.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const typingWords = ["Presisi", "Inovasi", "Kualitas", "Keunggulan"];
-        let typingIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingText = document.getElementById("typing-text");
-
-        function typeEffect() {
-            const currentWord = typingWords[typingIndex];
-            if (isDeleting) {
-                charIndex--;
-                typingText.textContent = currentWord.substring(0, charIndex);
-            } else {
-                charIndex++;
-                typingText.textContent = currentWord.substring(0, charIndex);
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                isDeleting = true;
-                setTimeout(typeEffect, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                typingIndex = (typingIndex + 1) % typingWords.length;
-                setTimeout(typeEffect, 500);
-            } else {
-                setTimeout(typeEffect, isDeleting ? 70 : 120);
-            }
-        }
-
-        typeEffect();
-
-        const parallaxImages = [
-            'assets/img/parallax-bg-1.jpg',
-            'assets/img/parallax-bg-2.jpg',
-            'assets/img/parallax-bg-3.jpg'
-        ];
-
-        let currentImage = 0;
-        const parallax = document.getElementById('parallax');
-
-        function preloadImages(urls, callback) {
-            let loadedCount = 0;
-            urls.forEach((url) => {
-                const img = new Image();
-                img.src = url;
-                img.onload = () => {
-                    loadedCount++;
-                    if (loadedCount === urls.length) {
-                        callback();
-                    }
-                };
-                img.onerror = () => {
-                    console.error('Failed to load image:', url);
-                    loadedCount++;
-                    if (loadedCount === urls.length) {
-                        callback();
-                    }
-                };
-            });
-        }
-
-        function changeParallaxBackground() {
-            parallax.style.backgroundImage = `url('${parallaxImages[currentImage]}')`;
-            currentImage = (currentImage + 1) % parallaxImages.length;
-        }
-
-        preloadImages(parallaxImages, () => {
-            changeParallaxBackground();
-            setInterval(changeParallaxBackground, 8000);
-        });
-        
-        function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        }
-
-        const links = document.querySelectorAll('nav a');
-        const pathSegments = window.location.pathname.split('/');
-        const currentPage = pathSegments[pathSegments.length - 1] || 'index.html';
-
-        links.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    </script>
-</body>
-
-</html>
