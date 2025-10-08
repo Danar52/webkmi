@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Produk | PT. Kenco Manufactur Indonesia</title>
+    <meta name="description" content="Hubungi PT. Kenco Manufactur Indonesia untuk kerja sama, informasi produk, dan lokasi pabrik kami di Bekasi.">
+    <title>Kontak | PT. Kenco Manufactur Indonesia</title>
     <link rel="icon" type="image/png" href="assets/img/favicon_img.png" style="background: transparent;" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" /> 
@@ -812,7 +813,7 @@ footer {
 <!-- ===== Tambahkan CSS (letakkan di <style> yang sudah ada atau file CSS eksternal) ===== -->
 <style>
   /* Bagian konten utama */
-  .contact-main { padding: 2.2rem 1.5rem; max-width: 1200px; margin: 1.2rem auto; }
+  .contact-main { padding: 4rem 1.5rem 2.2rem; max-width: 1200px; margin: 1.2rem auto; }
 
   /* Hero */
   .contact-hero { background: linear-gradient(180deg, rgba(30,58,138,0.06), rgba(30,58,138,0.03)); border-radius: 10px; padding: 1.2rem; margin-bottom: 1.4rem; text-align: center; }
@@ -821,11 +822,28 @@ footer {
   /* Grid cards */
   .contact-cards .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: start; }
   .card { background: #fff; border-radius: 10px; padding: 1.1rem; box-shadow: 0 6px 18px rgba(16,24,64,0.06); text-align: left; min-height: 160px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(16,24,64,0.1);
+    transition: all 0.3s ease;
+  }
   .card .icon { font-size: 1.7rem; margin-bottom: 0.6rem; }
   .card h3 { margin: 0 0 0.45rem 0; font-size: 1.05rem; color: #1E3A8A; }
   .card p { margin: 0 0 0.8rem 0; color: #344054; font-size: 0.95rem; line-height: 1.5; }
   .card a.btn { display: inline-block; text-decoration: none; padding: 0.5rem 0.9rem; border-radius: 8px; border: 1px solid rgba(30,58,138,0.08); background: linear-gradient(180deg,#FFD700,#F0C000); color: #10223c; font-weight: 600; font-size: 0.92rem; box-shadow: 0 6px 14px rgba(16,24,64,0.06); }
   .card a.btn.sm { padding: 0.45rem 0.8rem; font-size: 0.88rem; }
+
+  .card a.btn.sm:hover {
+    background: linear-gradient(180deg, #FFE55A, #FFD700);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(16, 24, 64, 0.15);
+    transition: all 0.25s ease;
+  }
+
+  .card a.btn.sm:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(16, 24, 64, 0.1);
+  }
 
   /* Map & photo 2-column */
   .contact-map .two-col { display: grid; grid-template-columns: 1fr 420px; gap: 1rem; align-items: start; margin-top: 1.6rem; }
@@ -950,14 +968,7 @@ footer {
             }
         });
 
-        // Animate hero on load (fade in)
-        window.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.hero-content').style.opacity = '0';
-            setTimeout(function() {
-                document.querySelector('.hero-content').style.transition = 'opacity 0.8s cubic-bezier(0.4,0,0.2,1)';
-                document.querySelector('.hero-content').style.opacity = '1';
-            }, 200);
-        });
+        // (Di halaman kontak.html tidak ada .hero-content, jadi script animasi hero-content dihapus)
 
           // slide-up reveal on scroll (hanya slide-up, tanpa fade)
   (function() {

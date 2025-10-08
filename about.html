@@ -266,6 +266,115 @@
             background-color: #1E3A8A;
         }
 
+        .award-gallery-scroll {
+          width: 100%;
+          margin-top: 2rem;
+          overflow-x: auto;
+          padding-bottom: 0.5rem;
+          scrollbar-width: thin;
+          scrollbar-color: #1E3A8A #eee;
+        }
+        .award-gallery-scroll::-webkit-scrollbar {
+          height: 8px;
+        }
+        .award-gallery-scroll::-webkit-scrollbar-thumb {
+          background: #1E3A8A;
+          border-radius: 6px;
+        }
+        .award-gallery-scroll h2 {
+          color: #1E3A8A;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+        .toggle-gallery-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          background-color: #1E3A8A;
+          color: #fff;
+          border: none;
+          padding: 0.9rem 1.6rem;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          margin-top: 1rem;
+          transition: background-color 0.3s, transform 0.3s;
+        }
+        .toggle-gallery-btn:hover {
+          background-color: #FFD700;
+          color: #1E3A8A;
+          transform: translateY(-2px);
+        }
+        .arrow-icon {
+          display: inline-block;
+          transition: transform 0.4s ease;
+        }
+        .arrow-icon.rotate {
+          transform: rotate(180deg);
+        }
+        .award-gallery-container {
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: max-height 0.8s ease, opacity 0.8s ease;
+        }
+        .award-gallery-container.active {
+          max-height: 2000px;
+          opacity: 1;
+        }
+.scroll-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 0 0.5rem 1rem;
+}
+
+.scroll-item {
+  background: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.scroll-item img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: contain;
+  background-color: #fff;
+}
+
+.scroll-text {
+  padding: 1rem;
+  text-align: center;
+}
+
+.scroll-text h4 {
+  font-size: 1rem;
+  color: #1E3A8A;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.scroll-text .issuer {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.scroll-text .recipient {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
 /* --- Footer Section --- */
 footer {
     background-color: #1A2B5B;
@@ -548,16 +657,41 @@ footer {
 
     <section class="award-section reveal">
         <div class="award-content">
-            <h2>Penghargaan</h2>
+            <h2>Sertifikasi & Penghargaan</h2>
             <p>
                 PT. Kenco Manufactur Indonesia secara konsisten melakukan perbaikan
                 berkelanjutan sehingga mendapatkan beberapa penghargaan.
             </p>
+            <button id="toggleGalleryBtn" class="toggle-gallery-btn">
+              <span class="arrow-icon">▼</span> Lihat Sertifikasi & Penghargaan
+            </button>
         </div>
-
         <div class="award-image">
             <img id="awardImage" src="assets/img/DSC01840.JPG" alt="Penghargaan PT. Kenco Manufactur Indonesia">
             <div class="dots" id="dots"></div>
+        </div>
+        <div id="awardGalleryContainer" class="award-gallery-container">
+          <div class="award-gallery-scroll">
+            <h2><u>Sertifikasi & Penghargaan Kami</u></h2>
+            <div class="scroll-container">
+              <div class="scroll-item">
+                <img src="assets/img/Quality Control Circle_page-0001.jpg" alt="QCC Award 2024">
+                <div class="scroll-text">
+                  <h4>Participant QCC Vendor 2024</h4>
+                  <p class="issuer">by PT. Dharma Polimetal Tbk.</p>
+                  <p class="recipient">Diterima oleh PT. Kenco Manufactur Indonesia</p>
+                </div>
+              </div>
+              <div class="scroll-item">
+                <img src="assets/img/UAF Americo-ISO 9001- PT KENCO MANUFACTUR INDONESIA_page-0001.jpg" alt="Safety Award 2024">
+                <div class="scroll-text">
+                  <h4>Sertifikasi ISO 9001:2015</h4>
+                  <p class="issuer">by Americo Quality Standards Registech Private limited</p>
+                  <p class="recipient">Diterima oleh PT. Kenco Manufactur Indonesia</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
     </section>
 
@@ -717,6 +851,21 @@ footer {
         }
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
+    </script>
+    <script>
+      // Toggle gallery visibility with arrow icon and text change
+      const toggleGalleryBtn = document.getElementById("toggleGalleryBtn");
+      const awardGalleryContainer = document.getElementById("awardGalleryContainer");
+      const arrowIcon = document.querySelector(".arrow-icon");
+      toggleGalleryBtn.addEventListener("click", () => {
+        awardGalleryContainer.classList.toggle("active");
+        arrowIcon.classList.toggle("rotate");
+        if (awardGalleryContainer.classList.contains("active")) {
+          toggleGalleryBtn.innerHTML = '<span class="arrow-icon rotate">▼</span> Sembunyikan Sertifikasi & Penghargaan';
+        } else {
+          toggleGalleryBtn.innerHTML = '<span class="arrow-icon">▼</span> Lihat Sertifikasi & Penghargaan';
+        }
+      });
     </script>
 </body>
 
