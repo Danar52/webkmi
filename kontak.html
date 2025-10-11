@@ -783,9 +783,9 @@ footer {
 
       <div class="card">
         <div class="icon">✉️</div>
-        <h3>Email & Jam Operasional</h3>
+        <h3>Email</h3>
         <p>Email: <a href="mailto:marketing@kencomanufactur.co.id">marketing@kencomanufactur.co.id</a></p>
-        <p>Jam Operasional: Senin–Jumat, 08:00–16:00 WIB</p>
+        <a class="btn sm" href="mailto:marketing@kencomanufactur.co.id">Kirim Email Sekarang</a>
       </div>
     </div>
   </section>
@@ -821,7 +821,17 @@ footer {
 
   /* Grid cards */
   .contact-cards .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: start; }
-  .card { background: #fff; border-radius: 10px; padding: 1.1rem; box-shadow: 0 6px 18px rgba(16,24,64,0.06); text-align: left; min-height: 160px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.1rem;
+    box-shadow: 0 6px 18px rgba(16,24,64,0.06);
+    text-align: left;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(16,24,64,0.1);
