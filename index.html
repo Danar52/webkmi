@@ -181,17 +181,6 @@
         max-width: 650px;
     }
 
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-40px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
 
     @keyframes fadeInSmooth {
         from {
@@ -236,9 +225,9 @@
         padding: 5rem 3rem;
         gap: 4rem;
         background-color: #FFFFFF;
-        margin: 4rem auto;
-        border-radius: 12px;
-        max-width: calc(100% - 3rem);
+        margin: 0;
+        border-radius: 0;
+        max-width: 100%;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
@@ -321,8 +310,8 @@
         background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
         text-align: center;
         padding: 5rem 3rem;
-        margin: 4rem auto;
-        border-radius: 14px;
+        margin: 0;
+        border-radius: 0;
         box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
     }
 
@@ -350,7 +339,7 @@
     .service-card {
         background: #ffffff;
         padding: 2.5rem 2rem;
-        border-radius: 14px;
+        border-radius: 0;
         max-width: 320px;
         flex: 1 1 280px;
         box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
@@ -412,9 +401,9 @@
         background: linear-gradient(135deg, #eef2f7 0%, #f9fbfd 100%);
         text-align: center;
         padding: 5rem 3rem;
-        max-width: calc(100% - 3rem);
-        margin: 4rem auto;
-        border-radius: 14px;
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -504,54 +493,16 @@
         }
     }
 
-    /* --- Parallax Section --- */
-    .parallax-section {
-        height: 500px;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        margin: 4rem auto;
-        border-radius: 12px;
-        overflow: hidden;
-        max-width: calc(100% - 3rem);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .parallax-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-        font-size: 3.2rem;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        text-align: center;
-        padding: 2rem;
-        border-radius: 12px;
-    }
 
     /* --- Footer Section --- */
     footer {
         background-color: #1A2B5B;
         color: white;
         padding: 4rem 3rem 2rem;
-        margin-top: 5rem;
+        margin: 0;
         animation: slideUp 1.5s ease;
-        border-radius: 12px;
-        max-width: calc(100% - 3rem);
-        margin: 0 auto 2rem auto;
+        border-radius: 0;
+        max-width: 100%;
         overflow: hidden;
     }
 
@@ -653,7 +604,7 @@
         flex-basis: 100%;
         text-align: center;
         padding-top: 2rem;
-        margin-top: 2rem;
+        margin-top: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.15);
         color: #b0b0b0;
         font-size: 0.85rem;
@@ -667,77 +618,44 @@
     /* --- Responsive Design --- */
     /* (Semua kode @media query Anda dipindahkan ke sini) */
     @media (max-width: 992px) {
-    .contact-cta {
-      padding: 2.5rem 1rem;
-      font-size: 1rem;
-      max-width: calc(100% - 2rem);
-    }
-    .contact-cta h3 {
-      font-size: 1.3rem;
-    }
-    .contact-cta p {
-      font-size: 0.96rem;
-    }
-    .contact-cta {
-      padding: 1.2rem 0.4rem;
-      font-size: 0.91rem;
-      max-width: 100%;
-      border-radius: 8px;
-      margin: 1.2rem auto;
-    }
-    .contact-cta h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.6rem;
-    }
-    .contact-cta p {
-      font-size: 0.75rem;
-      margin-bottom: 1.2rem;
-    }
         header {
             padding: 1rem 1.5rem;
-            max-width: calc(100% - 2rem);
-            margin: 1rem auto 0 auto;
+            max-width: 100%;
+            margin: 0;
         }
-
         nav {
             gap: 1.5rem;
         }
-
         .hero h1 {
             font-size: 3.5rem;
         }
-
         .hero p {
             font-size: 1.2rem;
         }
-
         .about-section {
             flex-direction: column;
             padding: 3rem 2rem;
             gap: 3rem;
-            max-width: calc(100% - 2rem);
+            max-width: 100%;
+            margin: 0;
+            border-radius: 0;
         }
-
         .about-content,
         .about-image {
             min-width: unset;
             max-width: 100%;
             text-align: center;
         }
-
         .about-content h2::after {
             left: 50%;
             transform: translateX(-50%);
         }
-
-        .parallax-section {
-            max-width: calc(100% - 2rem);
+        .clients-section {
+            margin-bottom: 0;
+            margin: 0;
+            border-radius: 0;
+            max-width: 100%;
         }
-
-        .parallax-overlay {
-            font-size: 2.5rem;
-        }
-
         .footer-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -746,7 +664,6 @@
             text-align: left;
             max-width: 100%;
         }
-
         .footer-info,
         .footer-links,
         .footer-social {
@@ -755,31 +672,26 @@
             min-width: 0;
             box-sizing: border-box;
         }
-
         .footer-info h3,
         .footer-links h3,
         .footer-social h3 {
             text-align: left;
         }
-
         .contact-details p i,
         .social-media a i {
             margin-right: 0.5em;
         }
-
         .footer-links ul li a,
         .social-media a {
             font-size: 0.9rem;
         }
-
         .footer-links ul {
             padding-left: 0;
         }
-
         .footer-bottom {
             grid-column: 1 / span 3;
             padding-top: 1.5rem;
-            margin-top: 1.5rem;
+            margin-top: 0;
             text-align: center;
         }
     }
@@ -788,8 +700,8 @@
         header {
             padding: 0.6rem 0.8rem;
             top: 0.7rem;
-            max-width: calc(100% - 1.2rem);
-            border-radius: 10px;
+            max-width: 100%;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -904,6 +816,9 @@
             padding: 2.5rem 1.2rem;
             gap: 2rem;
             text-align: center;
+            margin: 0;
+            border-radius: 0;
+            max-width: 100%;
         }
 
         .about-content h2,
@@ -922,25 +837,17 @@
             margin-bottom: 0.7rem;
         }
 
-        .parallax-section {
-            height: auto;
-            min-height: 180px;
-            margin: 1.2rem auto;
+        .clients-section {
+            margin-bottom: 0;
+            margin: 0;
+            border-radius: 0;
             max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.07);
-        }
-
-        .parallax-overlay {
-            font-size: 1.05rem;
-            padding: 0.9rem 0.4rem;
-            text-align: center;
         }
 
         footer {
             padding: 1rem 0.8rem 0.8rem;
-            margin-top: 1.2rem;
-            border-radius: 10px;
+            margin: 0;
+            border-radius: 0;
             max-width: 100%;
         }
 
@@ -998,7 +905,7 @@
         .footer-bottom {
             font-size: 0.8rem;
             padding-top: 1rem;
-            margin-top: 1rem;
+            margin-top: 0;
             border-top: 1px solid rgba(255, 255, 255, 0.10);
             text-align: center;
         }
@@ -1009,7 +916,7 @@
             padding: 0.5rem 0.5rem;
             top: 0.5rem;
             max-width: 100%;
-            border-radius: 8px;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1064,12 +971,13 @@
 
         .about-section {
             padding: 0.6rem 0.1rem;
-            margin: 0.7rem auto;
+            margin: 0;
             max-width: 100%;
             gap: 0.9rem;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            border-radius: 0;
         }
 
         .about-content {
@@ -1112,25 +1020,17 @@
             padding: 0.6rem 1.2rem;
         }
 
-        .parallax-section {
-            height: auto;
-            min-height: 80px;
-            margin: 0.7rem auto;
+        .clients-section {
+            margin-bottom: 0;
+            margin: 0;
+            border-radius: 0;
             max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-        }
-
-        .parallax-overlay {
-            font-size: 0.85rem;
-            padding: 0.3rem 0.05rem;
-            text-align: center;
         }
 
         footer {
             padding: 0.7rem 0.2rem 0.2rem;
-            margin-top: 0.7rem;
-            border-radius: 8px;
+            margin: 0;
+            border-radius: 0;
             max-width: 100%;
         }
 
@@ -1194,7 +1094,7 @@
         .footer-bottom {
             font-size: 0.62rem;
             padding-top: 0.7rem;
-            margin-top: 0.7rem;
+            margin-top: 0;
             border-top: 1px solid rgba(255, 255, 255, 0.10);
             text-align: center;
         }
@@ -1202,7 +1102,6 @@
         /* Max width and center for all main sections */
         .hero,
         .about-section,
-        .parallax-section,
         footer {
             max-width: 100%;
             margin-left: auto;
@@ -1285,11 +1184,6 @@
         </div>
     </section>
 
-    <section class="parallax-section bg-home" id="parallax">
-        <div class="parallax-overlay">
-            “Precision in Every Part, Progress in Every Step.”
-        </div>
-    </section>
 
     <footer>
         <div class="footer-container">
@@ -1395,7 +1289,7 @@
             }
         });
 
-        // Animate hero on load (slide in left is via CSS)
+        // Animate hero on load
         window.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.hero-content').style.opacity = '1';
         });

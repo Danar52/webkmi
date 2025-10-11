@@ -9,115 +9,110 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-<style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', Arial, sans-serif;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
 
-    body {
-      background-color: #F0F2F5;
-      color: #333;
-      scroll-behavior: smooth;
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-      opacity: 0;
-      transition: opacity 0.8s ease-in;
-    }
-    body.loaded {
-      opacity: 1;
-    }
+        body {
+            background-color: #F0F2F5;
+            color: #333;
+            scroll-behavior: smooth;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    /* --- Header Section --- */
-    header {
-      background: transparent;
-      padding: 1rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border-radius: 0;
-      width: 100%;
-      margin: 0;
-      max-width: 100%;
-      transition: background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.3s, border-radius 0.3s;
-      backdrop-filter: blur(0px);
-      -webkit-backdrop-filter: blur(0px);
+        /* --- Header Section --- */
+        header {
+        background: transparent;
+        padding: 1rem 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+        transition: background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.3s, border-radius 0.3s;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
     }
 
     .logo img {
-      display: block;
-      height: 48px;
-      transition: transform 0.3s ease;
+        display: block;
+        height: 48px;
+        transition: transform 0.3s ease;
     }
 
     .logo:hover img {
-      transform: scale(1.05);
+        transform: scale(1.05);
     }
 
     .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
     }
 
     .hamburger div {
-      width: 28px;
-      height: 3px;
-      background: #fff;
-      margin: 5px;
-      transition: 0.3s;
+        width: 28px;
+        height: 3px;
+        background: #fff;
+        margin: 5px;
+        transition: 0.3s;
     }
 
     nav {
-      display: flex;
-      gap: 2.5rem;
+        display: flex;
+        gap: 2.5rem;
     }
 
     nav a {
-      position: relative;
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease, transform 0.2s ease;
-      font-size: 1.05rem;
+        position: relative;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        transition: color 0.3s ease, transform 0.2s ease;
+        font-size: 1.05rem;
     }
 
     nav a::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -8px;
-      transform: translateX(-50%);
-      width: 0%;
-      height: 3px;
-      background-color: #FFD700;
-      border-radius: 2px;
-      transition: width 0.3s ease;
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 3px;
+        background-color: #FFD700;
+        border-radius: 2px;
+        transition: width 0.3s ease;
     }
 
     nav a:hover::after,
     nav a.active::after {
-      width: 80%;
+        width: 80%;
     }
 
     nav a:hover,
     nav a.active {
-      color: #FFD700 !important;
-      transform: translateY(-2px);
-      font-weight: 700;
+        color: #FFD700;
+        transform: translateY(-2px);
+        font-weight: 700;
     }
 
         /* --- About Section --- */
         .about-section {
-            margin: 6rem auto 4rem auto;
+            margin: 0;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -125,9 +120,22 @@
             padding: 5rem 3rem;
             gap: 4rem;
             background-color: #fff;
-            border-radius: 12px;
-            max-width: calc(100% - 3rem);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 0;
+            width: 100%;
+            box-shadow: none;
+        }
+
+        /* Margin top for first about-section to separate from navbar */
+        .about-section:first-of-type {
+            margin-top: 80px;
+        }
+
+        /* Margin between sections: remove margin except for first section */
+        .about-section+.about-section,
+        .about-section+.award-section,
+        .award-section+.about-section,
+        .award-section+.award-section {
+            margin-top: 0;
         }
 
         .about-content {
@@ -173,8 +181,8 @@
         .about-image img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 0;
+            box-shadow: none;
             transition: transform 0.3s ease;
         }
 
@@ -190,10 +198,10 @@
             padding: 5rem 3rem;
             gap: 4rem;
             background-color: #fff;
-            margin: 4rem auto;
-            border-radius: 12px;
-            max-width: calc(100% - 3rem);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin: 0;
+            border-radius: 0;
+            width: 100%;
+            box-shadow: none;
         }
 
         .award-content {
@@ -242,8 +250,8 @@
         .award-image img {
             width: 100%;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 0;
+            box-shadow: none;
             transition: opacity 1s ease;
         }
 
@@ -269,242 +277,243 @@
         }
 
         .award-gallery-scroll {
-          width: 100%;
-          margin-top: 2rem;
-          overflow-x: auto;
-          padding-bottom: 0.5rem;
-          scrollbar-width: thin;
-          scrollbar-color: #1E3A8A #eee;
+            width: 100%;
+            margin-top: 2rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: #1E3A8A #eee;
         }
+
         .award-gallery-scroll::-webkit-scrollbar {
-          height: 8px;
+            height: 8px;
         }
+
         .award-gallery-scroll::-webkit-scrollbar-thumb {
-          background: #1E3A8A;
-          border-radius: 6px;
+            background: #1E3A8A;
+            border-radius: 6px;
         }
+
         .award-gallery-scroll h2 {
-          color: #1E3A8A;
-          margin-bottom: 1rem;
-          text-align: center;
+            color: #1E3A8A;
+            margin-bottom: 1rem;
+            text-align: center;
         }
+
         .toggle-gallery-btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          background-color: #1E3A8A;
-          color: #fff;
-          border: none;
-          padding: 0.9rem 1.6rem;
-          border-radius: 8px;
-          font-size: 1rem;
-          font-weight: 600;
-          cursor: pointer;
-          margin-top: 1rem;
-          transition: background-color 0.3s, transform 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: #1E3A8A;
+            color: #fff;
+            border: none;
+            padding: 0.9rem 1.6rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
         }
+
         .toggle-gallery-btn:hover {
-          background-color: #FFD700;
-          color: #1E3A8A;
-          transform: translateY(-2px);
+            background-color: #FFD700;
+            color: #1E3A8A;
+            transform: translateY(-2px);
         }
+
         .arrow-icon {
-          display: inline-block;
-          transition: transform 0.4s ease;
+            display: inline-block;
+            transition: transform 0.4s ease;
         }
+
         .arrow-icon.rotate {
-          transform: rotate(180deg);
+            transform: rotate(180deg);
         }
+
         .award-gallery-container {
-          max-height: 0;
-          overflow: hidden;
-          opacity: 0;
-          transition: max-height 0.8s ease, opacity 0.8s ease;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.8s ease, opacity 0.8s ease;
         }
+
         .award-gallery-container.active {
-          max-height: 2000px;
-          opacity: 1;
+            max-height: 2000px;
+            opacity: 1;
         }
-.scroll-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  padding: 0 0.5rem 1rem;
-}
 
-.scroll-item {
-  background: #fafafa;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .scroll-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            padding: 0 0.5rem 1rem;
+        }
 
-.scroll-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
+        .scroll-item {
+            background: #fafafa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.scroll-item img {
-  width: 100%;
-  aspect-ratio: 5 / 4;
-  object-fit: contain;
-  background-color: #fff;
-}
+        .scroll-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
 
-.scroll-text {
-  padding: 1rem;
-  text-align: center;
-}
+        .scroll-item img {
+            width: 100%;
+            aspect-ratio: 5 / 4;
+            object-fit: contain;
+            background-color: #fff;
+        }
 
-.scroll-text h4 {
-  font-size: 1rem;
-  color: #1E3A8A;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
+        .scroll-text {
+            padding: 1rem;
+            text-align: center;
+        }
 
-.scroll-text .issuer {
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 0.3rem;
-}
+        .scroll-text h4 {
+            font-size: 1rem;
+            color: #1E3A8A;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
 
-.scroll-text .recipient {
-  font-size: 0.9rem;
-  color: #333;
-  font-weight: 500;
-}
+        .scroll-text .issuer {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
 
-/* --- Footer Section --- */
-footer {
-    background-color: #1A2B5B;
-    color: white;
-    padding: 3rem 2.5rem 1.5rem;
-    margin-top: 4rem;
-    border-radius: 12px;
-    max-width: calc(100% - 3rem);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-}
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.footer-info,
-.footer-links,
-.footer-social {
-    flex: 1 1 260px;
-    padding: 1rem 0.5rem;
-    text-align: left;
-    min-width: 220px;
-}
-.footer-info h3,
-.footer-links h3,
-.footer-social h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1.2rem;
-    color: #FFD700;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-}
-.footer-info p,
-.contact-details p {
-    font-size: 0.97rem;
-    line-height: 1.7;
-    margin-bottom: 0.7rem;
-    color: #c9d6ff;
-}
-.contact-details {
-    margin-top: 1.2rem;
-}
-.contact-details p i {
-    margin-right: 0.7em;
-    color: #FFD700;
-}
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.footer-links ul li {
-    margin-bottom: 0.7rem;
-}
-.footer-links ul li a {
-    color: #c9d6ff;
-    text-decoration: none;
-    font-size: 0.97rem;
-    transition: color 0.3s, transform 0.3s;
-    display: inline-block;
-    border-radius: 4px;
-    padding: 0.1em 0.2em;
-}
-.footer-links ul li a:hover {
-    color: #FFD700;
-    transform: translateX(6px) scale(1.03);
-    background: rgba(255,215,0,0.06);
-}
-.social-media {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.social-media a {
-    color: #c9d6ff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: transform 0.3s, color 0.3s;
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.97rem;
-    border-radius: 4px;
-    padding: 0.1em 0.2em;
-}
-.social-media a i {
-    padding-right: 0.7em;
-    font-size: 1.13rem;
-    color: #FFD700;
-}
-.social-media a:hover {
-    transform: translateX(7px) scale(1.03);
-    color: #FFD700;
-    background: rgba(255,215,0,0.06);
-}
-/* --- Footer Bottom Section --- */
-.footer-bottom {
-    flex-basis: 100%;
-    text-align: center;
-    padding-top: 1.5rem;
-    margin-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.13);
-    color: #b0b0b0;
-    font-size: 0.88rem;
-}
-.footer-bottom p {
-    margin: 0;
-    color: inherit;
-}
+        .scroll-text .recipient {
+            font-size: 0.9rem;
+            color: #333;
+            font-weight: 500;
+        }
 
-
-    /* --- Reveal Animation (slide-up fade-in) --- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
+        /* --- Footer Section --- */
+        footer {
+        background-color: #1A2B5B;
+        color: white;
+        padding: 4rem 3rem 2rem;
+        margin: 0;
+        animation: slideUp 1.5s ease;
+        border-radius: 0;
+        max-width: 100%;
+        overflow: hidden;
     }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-social {
+        flex: 1 1 280px;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .footer-info h3,
+    .footer-links h3,
+    .footer-social h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #FFD700;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-info p,
+    .contact-details p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        margin-bottom: 0.8rem;
+        color: #c9d6ff;
+    }
+
+    .contact-details {
+        margin-top: 1.5rem;
+    }
+
+    .contact-details p i {
+        margin-right: 0.8em;
+        color: #FFD700;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-links ul li a {
+        color: #c9d6ff;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+    }
+
+    .footer-links ul li a:hover {
+        color: #FFD700;
+        transform: translateX(5px);
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .social-media a {
+        color: #c9d6ff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.3s ease, color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.95rem;
+    }
+
+    .social-media a i {
+        padding-right: 0.8em;
+        font-size: 1.1rem;
+        color: #FFD700;
+    }
+
+    .social-media a:hover {
+        transform: translateX(8px);
+        color: #FFD700;
+    }
+
+    /* --- New Footer Bottom / Copyright Section --- */
+    .footer-bottom {
+        flex-basis: 100%;
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        color: #b0b0b0;
+        font-size: 0.85rem;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+        color: inherit;
     }
 
         /* --- Responsive --- */
@@ -514,29 +523,46 @@ footer {
                 max-width: calc(100% - 2rem);
                 margin: 1rem auto 0;
             }
+
             nav {
                 gap: 1.5rem;
             }
+
             .about-section {
                 flex-direction: column;
                 padding: 3rem 2rem;
                 gap: 3rem;
-                max-width: calc(100% - 2rem);
+                width: 100%;
             }
+
+            .about-section:first-of-type {
+                margin-top: 100px;
+            }
+
+            .about-section+.about-section,
+            .about-section+.award-section,
+            .award-section+.about-section,
+            .award-section+.award-section {
+                margin-top: 0;
+            }
+
             .about-content,
             .about-image {
                 text-align: center;
             }
+
             .about-content h2::after {
                 left: 50%;
                 transform: translateX(-50%);
             }
+
             .footer-container {
                 flex-direction: column;
                 align-items: stretch;
                 text-align: center;
                 gap: 0.5rem;
             }
+
             .footer-info,
             .footer-links,
             .footer-social {
@@ -545,12 +571,14 @@ footer {
                 min-width: 0;
             }
         }
+
         @media (max-width: 768px) {
             header {
                 padding: 1rem;
                 top: 1rem;
                 max-width: calc(100% - 1.5rem);
             }
+
             nav {
                 display: none;
                 position: absolute;
@@ -565,40 +593,147 @@ footer {
                 text-align: center;
                 border: 1px solid #eee;
             }
+
             nav.active {
                 display: flex;
             }
+
             nav a {
                 padding: 0.8rem 0;
                 font-size: 1rem;
                 color: #555;
             }
+
             .hamburger {
                 display: flex;
             }
+
             .footer-container {
                 padding: 0 0.1rem;
             }
         }
+
         @media (max-width: 480px) {
             .logo img {
                 height: 40px;
             }
+
             .about-section {
                 padding: 2rem 1rem;
-                margin: 2rem auto;
-                max-width: calc(100% - 1rem);
+                margin: 0;
+                width: 100%;
             }
+
+            .about-section:first-of-type {
+                margin-top: 100px;
+            }
+
+            .about-section+.about-section,
+            .about-section+.award-section,
+            .award-section+.about-section,
+            .award-section+.award-section {
+                margin-top: 0;
+            }
+
             .about-content h2 {
                 font-size: 2rem;
             }
+
             footer {
                 padding: 2rem 0.7rem 0.8rem 0.7rem;
             }
+
             .footer-bottom {
                 font-size: 0.7rem;
                 padding-top: 1rem;
                 margin-top: 1.2rem;
+            }
+        }
+
+        /* Hero Sejarah Perusahaan (GoTo Style) */
+        .hero-history {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('assets/img/home.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero-history::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(20,20,20,0.9) 45%, rgba(0,0,0.9,1) 100%);
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 4rem 6rem;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            text-align: left;
+            z-index: 3;
+            color: #fff;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border: 2px solid #FFD700;
+            color: #FFD700;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: #FFD700;
+            color: #1E3A8A;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 992px) {
+            .hero-history {
+                height: auto;
+                padding: 6rem 2rem;
+                justify-content: center;
+            }
+            .hero-overlay {
+                padding: 3rem 2rem;
+                justify-content: center;
+            }
+            .hero-content {
+                text-align: center;
+                max-width: 90%;
+            }
+            .hero-content h2 {
+                font-size: 2.3rem;
             }
         }
     </style>
@@ -609,13 +744,14 @@ footer {
         <a href="index.html" class="logo" tabindex="0">
             <img src="assets/img/logo-kmi-removebg-preview.png" alt="PT. Kenco" />
         </a>
-        <div class="hamburger" id="hamburger-btn" onclick="toggleMenu()" tabindex="0" aria-label="Buka menu navigasi" aria-expanded="false">
+        <div class="hamburger" id="hamburger-btn" onclick="toggleMenu()" tabindex="0" aria-label="Buka menu navigasi"
+            aria-expanded="false">
             <div></div>
             <div></div>
             <div></div>
         </div>
         <nav id="nav-menu" aria-label="Navigasi utama">
-            <a href="index.html">Beranda</a>
+            <a href="index.html" class="active">Beranda</a>
             <a href="about.html">Tentang Kami</a>
             <a href="produk.html">Produk</a>
             <a href="bisnis.html">Bisnis Kami</a>
@@ -623,23 +759,18 @@ footer {
         </nav>
     </header>
 
-    <section class="about-section reveal">
-        <div class="about-content">
-            <h2>Sejarah Perusahaan</h2>
-            <p>PT. Kenco Manufactur Indonesia berdiri sejak tahun 2005 sebagai perusahaan manufaktur yang bergerak di
-                bidang <strong>dies, jig, dan part stamping</strong> untuk industri otomotif roda dua dan roda empat.
-                Dengan pengalaman lebih dari satu dekade, kami telah menjadi mitra strategis bagi berbagai perusahaan
-                otomotif ternama di Indonesia.</p>
-            <p>Kami mengedepankan <strong>presisi, efisiensi, dan inovasi</strong> dalam setiap proses produksi.
-                Didukung oleh tenaga kerja profesional dan fasilitas modern, kami terus berupaya memberikan hasil
-                terbaik sesuai dengan standar industri global.</p>
-        </div>
-        <div class="about-image">
-            <img src="assets/img/about-kenco.jpg" alt="Pabrik PT. Kenco Manufactur Indonesia">
+    <section class="hero-history">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2>Sejarah Perusahaan</h2>
+                <p>PT. Kenco Manufactur Indonesia berdiri sejak tahun 2005 sebagai perusahaan manufaktur yang bergerak di bidang <strong>dies, jig, dan part stamping</strong> untuk industri otomotif roda dua dan roda empat. Dengan pengalaman lebih dari satu dekade, kami telah menjadi mitra strategis bagi berbagai perusahaan otomotif ternama di Indonesia.</p>
+                <p>Kami mengedepankan <strong>presisi, efisiensi, dan inovasi</strong> dalam setiap proses produksi. Didukung oleh tenaga kerja profesional dan fasilitas modern, kami terus berupaya memberikan hasil terbaik sesuai dengan standar industri global.</p>
+                <a href="#visi-misi" class="btn-outline">Pelajari Selengkapnya</a>
+            </div>
         </div>
     </section>
 
-    <section class="about-section reveal">
+    <section class="about-section" id="visi-misi">
         <div class="about-content">
             <h2>Visi & Misi</h2>
             <p><strong>Visi:</strong> Menjadi perusahaan manufaktur terbaik di Indonesia dengan komitmen terhadap
@@ -657,7 +788,7 @@ footer {
         </div>
     </section>
 
-    <section class="award-section reveal">
+    <section class="award-section">
         <div class="award-content">
             <h2>Sertifikasi & Penghargaan</h2>
             <p>
@@ -665,7 +796,7 @@ footer {
                 berkelanjutan sehingga mendapatkan beberapa penghargaan.
             </p>
             <button id="toggleGalleryBtn" class="toggle-gallery-btn">
-              <span class="arrow-icon">▼</span> Lihat Sertifikasi & Penghargaan
+                <span class="arrow-icon">▼</span> Lihat Sertifikasi & Penghargaan
             </button>
         </div>
         <div class="award-image">
@@ -673,27 +804,28 @@ footer {
             <div class="dots" id="dots"></div>
         </div>
         <div id="awardGalleryContainer" class="award-gallery-container">
-          <div class="award-gallery-scroll">
-            <h2><u>Sertifikasi & Penghargaan Kami</u></h2>
-            <div class="scroll-container">
-              <div class="scroll-item">
-                <img src="assets/img/Quality Control Circle_page-0001.jpg" alt="QCC Award 2024">
-                <div class="scroll-text">
-                  <h4>Participant QCC Vendor 2024</h4>
-                  <p class="issuer">by PT. Dharma Polimetal Tbk.</p>
-                  <p class="recipient">Diterima oleh PT. Kenco Manufactur Indonesia</p>
+            <div class="award-gallery-scroll">
+                <h2><u>Sertifikasi & Penghargaan Kami</u></h2>
+                <div class="scroll-container">
+                    <div class="scroll-item">
+                        <img src="assets/img/Quality Control Circle_page-0001.jpg" alt="QCC Award 2024">
+                        <div class="scroll-text">
+                            <h4>Participant QCC Vendor 2024</h4>
+                            <p class="issuer">by PT. Dharma Polimetal Tbk.</p>
+                            <p class="recipient">Diterima oleh PT. Kenco Manufactur Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="assets/img/UAF Americo-ISO 9001- PT KENCO MANUFACTUR INDONESIA_page-0001.jpg"
+                            alt="Safety Award 2024">
+                        <div class="scroll-text">
+                            <h4>Sertifikasi ISO 9001:2015</h4>
+                            <p class="issuer">by Americo Quality Standards Registech Private limited</p>
+                            <p class="recipient">Diterima oleh PT. Kenco Manufactur Indonesia</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="scroll-item">
-                <img src="assets/img/UAF Americo-ISO 9001- PT KENCO MANUFACTUR INDONESIA_page-0001.jpg" alt="Safety Award 2024">
-                <div class="scroll-text">
-                  <h4>Sertifikasi ISO 9001:2015</h4>
-                  <p class="issuer">by Americo Quality Standards Registech Private limited</p>
-                  <p class="recipient">Diterima oleh PT. Kenco Manufactur Indonesia</p>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
     </section>
 
@@ -701,9 +833,11 @@ footer {
         <div class="footer-container">
             <div class="footer-info">
                 <h3>PT. Kenco Manufactur Indonesia</h3>
-                <p>Mendedikasikan diri untuk presisi dan inovasi dalam setiap komponen, mendukung kemajuan industri otomotif.</p>
+                <p>Mendedikasikan diri untuk presisi dan inovasi dalam setiap komponen, mendukung kemajuan industri
+                    otomotif.</p>
                 <div class="contact-details">
-                    <p><i class="bi bi-geo-alt-fill"></i> Jl. Lambang Jaya No.9, Lambangjaya, Kec. Tambun Sel., Kabupaten Bekasi, Jawa Barat 17510</p>
+                    <p><i class="bi bi-geo-alt-fill"></i> Jl. Lambang Jaya No.9, Lambangjaya, Kec. Tambun Sel.,
+                        Kabupaten Bekasi, Jawa Barat 17510</p>
                     <p><i class="bi bi-telephone-fill"></i> (021) 123-4567</p>
                     <p><i class="bi bi-printer-fill"></i> (021) 765-4321</p>
                 </div>
@@ -760,34 +894,34 @@ footer {
         function handleHeaderScroll() {
             const scrollY = window.scrollY || window.pageYOffset;
             if (scrollY > 30) {
+                // Saat discroll → latar solid biru, teks hitam
                 header.style.backgroundColor = "rgba(30, 58, 138, 0.85)";
                 header.style.backdropFilter = "blur(8px)";
                 header.style.webkitBackdropFilter = "blur(8px)";
                 header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.13)";
                 header.style.borderRadius = "0 0 12px 12px";
                 header.style.top = "0";
-                // Ubah warna font nav menjadi putih, kecuali yang hover/active tetap oranye
                 document.querySelectorAll('nav a').forEach(link => {
-                  if (link.matches(':hover') || link.classList.contains('active')) {
-                    link.style.color = '#FFD700';
-                  } else {
-                    link.style.color = '#fff';
-                  }
+                    if (link.matches(':hover') || link.classList.contains('active')) {
+                        link.style.color = '#FFD700';
+                    } else {
+                        link.style.color = '#fff';
+                    }
                 });
             } else {
+                // Saat posisi paling atas → latar transparan, teks putih
                 header.style.backgroundColor = "transparent";
                 header.style.backdropFilter = "blur(0px)";
                 header.style.webkitBackdropFilter = "blur(0px)";
-                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
+                header.style.boxShadow = "none";
                 header.style.borderRadius = "0";
                 header.style.top = "0";
-                // Ubah warna font nav menjadi hitam, kecuali yang hover/active tetap oranye
                 document.querySelectorAll('nav a').forEach(link => {
-                  if (link.matches(':hover') || link.classList.contains('active')) {
-                    link.style.color = '#FFD700';
-                  } else {
-                    link.style.color = '#000';
-                  }
+                    if (link.matches(':hover') || link.classList.contains('active')) {
+                        link.style.color = '#FFD700';
+                    } else {
+                        link.style.color = '#fff';
+                    }
                 });
             }
             lastScroll = scrollY;
@@ -796,7 +930,7 @@ footer {
         window.addEventListener('DOMContentLoaded', handleHeaderScroll);
 
         // Close nav menu on clicking outside (mobile)
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const nav = document.getElementById('nav-menu');
             const hamburger = document.getElementById('hamburger-btn');
             if (window.innerWidth <= 992 && nav.classList.contains('active')) {
@@ -808,7 +942,7 @@ footer {
         });
 
         // Keyboard accessibility for hamburger
-        document.getElementById('hamburger-btn').addEventListener('keydown', function(e) {
+        document.getElementById('hamburger-btn').addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 toggleMenu();
@@ -852,40 +986,22 @@ footer {
             showImage(nextIndex);
         }, 4000);
 
-        // Fade-in effect for whole page
-        window.addEventListener('DOMContentLoaded', function() {
-            document.body.classList.add('loaded');
-        });
 
-        // Reveal animation on scroll for sections
-        const reveals = document.querySelectorAll('.reveal');
-        function revealOnScroll() {
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveals[i].getBoundingClientRect().top;
-                const elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
     </script>
     <script>
-      // Toggle gallery visibility with arrow icon and text change
-      const toggleGalleryBtn = document.getElementById("toggleGalleryBtn");
-      const awardGalleryContainer = document.getElementById("awardGalleryContainer");
-      const arrowIcon = document.querySelector(".arrow-icon");
-      toggleGalleryBtn.addEventListener("click", () => {
-        awardGalleryContainer.classList.toggle("active");
-        arrowIcon.classList.toggle("rotate");
-        if (awardGalleryContainer.classList.contains("active")) {
-          toggleGalleryBtn.innerHTML = '<span class="arrow-icon rotate">▼</span> Sembunyikan Sertifikasi & Penghargaan';
-        } else {
-          toggleGalleryBtn.innerHTML = '<span class="arrow-icon">▼</span> Lihat Sertifikasi & Penghargaan';
-        }
-      });
+        // Toggle gallery visibility with arrow icon and text change
+        const toggleGalleryBtn = document.getElementById("toggleGalleryBtn");
+        const awardGalleryContainer = document.getElementById("awardGalleryContainer");
+        const arrowIcon = document.querySelector(".arrow-icon");
+        toggleGalleryBtn.addEventListener("click", () => {
+            awardGalleryContainer.classList.toggle("active");
+            arrowIcon.classList.toggle("rotate");
+            if (awardGalleryContainer.classList.contains("active")) {
+                toggleGalleryBtn.innerHTML = '<span class="arrow-icon rotate">▼</span> Sembunyikan Sertifikasi & Penghargaan';
+            } else {
+                toggleGalleryBtn.innerHTML = '<span class="arrow-icon">▼</span> Lihat Sertifikasi & Penghargaan';
+            }
+        });
     </script>
 </body>
 
