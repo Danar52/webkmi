@@ -33,20 +33,22 @@
 
     /* --- Header Section --- */
     header {
-      background-color: rgba(30,58,138,0.7);
+      background: transparent;
       padding: 1rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 1.5rem;
+      position: fixed;
+      top: 0;
       z-index: 1000;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border-radius: 12px;
-      max-width: calc(100% - 3rem);
-      margin: 1.5rem auto 0;
-      transition: background-color 0.3s ease, top 0.3s ease, border-radius 0.3s ease;
-      backdrop-filter: blur(8px);
+      border-radius: 0;
+      width: 100%;
+      margin: 0;
+      max-width: 100%;
+      transition: background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.3s, border-radius 0.3s;
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
     }
 
     .logo img {
@@ -81,7 +83,7 @@
     nav a {
       position: relative;
       text-decoration: none;
-      color: #fff;
+      color: #000;
       font-weight: 500;
       padding: 0.5rem 0;
       transition: color 0.3s ease, transform 0.2s ease;
@@ -108,13 +110,14 @@
 
     nav a:hover,
     nav a.active {
-      color: #FFD700;
+      color: #FFD700 !important;
       transform: translateY(-2px);
       font-weight: 700;
     }
 
         /* --- About Section --- */
         .about-section {
+            margin: 6rem auto 4rem auto;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -122,7 +125,6 @@
             padding: 5rem 3rem;
             gap: 4rem;
             background-color: #fff;
-            margin: 4rem auto;
             border-radius: 12px;
             max-width: calc(100% - 3rem);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -758,17 +760,35 @@ footer {
         function handleHeaderScroll() {
             const scrollY = window.scrollY || window.pageYOffset;
             if (scrollY > 30) {
-                header.style.backgroundColor = "#1E3A8A";
+                header.style.backgroundColor = "rgba(30, 58, 138, 0.85)";
+                header.style.backdropFilter = "blur(8px)";
+                header.style.webkitBackdropFilter = "blur(8px)";
                 header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.13)";
                 header.style.borderRadius = "0 0 12px 12px";
                 header.style.top = "0";
-                header.style.transition = "background 0.35s, box-shadow 0.35s, top 0.25s";
+                // Ubah warna font nav menjadi putih, kecuali yang hover/active tetap oranye
+                document.querySelectorAll('nav a').forEach(link => {
+                  if (link.matches(':hover') || link.classList.contains('active')) {
+                    link.style.color = '#FFD700';
+                  } else {
+                    link.style.color = '#fff';
+                  }
+                });
             } else {
-                header.style.backgroundColor = "rgba(30,58,138,0.7)";
+                header.style.backgroundColor = "transparent";
+                header.style.backdropFilter = "blur(0px)";
+                header.style.webkitBackdropFilter = "blur(0px)";
                 header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
-                header.style.borderRadius = "12px";
-                header.style.top = "";
-                header.style.transition = "background 0.35s, box-shadow 0.35s, top 0.25s";
+                header.style.borderRadius = "0";
+                header.style.top = "0";
+                // Ubah warna font nav menjadi hitam, kecuali yang hover/active tetap oranye
+                document.querySelectorAll('nav a').forEach(link => {
+                  if (link.matches(':hover') || link.classList.contains('active')) {
+                    link.style.color = '#FFD700';
+                  } else {
+                    link.style.color = '#000';
+                  }
+                });
             }
             lastScroll = scrollY;
         }
