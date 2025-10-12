@@ -83,6 +83,7 @@
     nav {
         display: flex;
         gap: 2.5rem;
+        border-radius: 0 !important;
     }
 
     nav a {
@@ -104,7 +105,7 @@
         width: 0%;
         height: 3px;
         background-color: #FFD700;
-        border-radius: 2px;
+        border-radius: 0px;
         transition: width 0.3s ease;
     }
 
@@ -493,7 +494,6 @@
         }
     }
 
-
     /* --- Footer Section --- */
     footer {
         background-color: #1A2B5B;
@@ -742,7 +742,7 @@
             background: #1E3A8A;
             flex-direction: column;
             padding: 1.1rem 0.7rem 1.1rem 0.7rem;
-            border-radius: 0 0 12px 12px;
+            border-radius: 0 !important;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
             text-align: center;
             border: none;
@@ -769,7 +769,7 @@
             font-size: 1.04rem;
             color: #fff;
             margin: 0.15rem 0;
-            border-radius: 7px;
+            border-radius: 0;
             background: none;
             transition: background 0.2s, color 0.2s;
             text-align: center;
@@ -1165,7 +1165,7 @@
             </div>
         </div>
         <div class="services-button">
-          <a href="bisnis.html" class="btn-primary">Pelajari Lebih Lanjut</a>
+          <a href="bisnis.html" class="btn-primary">Selengkapnya</a>
         </div>
     </section>
 
@@ -1253,18 +1253,18 @@
                 header.style.backdropFilter = "blur(8px)";
                 header.style.webkitBackdropFilter = "blur(8px)";
                 header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.13)";
-                header.style.borderRadius = "0 0 12px 12px";
-                header.style.top = "0";
-                header.style.transition = "background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.25s";
-            } else {
-                header.style.backgroundColor = "transparent";
-                header.style.backdropFilter = "blur(0px)";
-                header.style.webkitBackdropFilter = "blur(0px)";
-                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
-                header.style.borderRadius = "0";
-                header.style.top = "0";
-                header.style.transition = "background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.25s";
-            }
+        // header.style.borderRadius = "0 0 12px 12px";
+        header.style.top = "0";
+        header.style.transition = "background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.25s";
+    } else {
+        header.style.backgroundColor = "transparent";
+        header.style.backdropFilter = "blur(0px)";
+        header.style.webkitBackdropFilter = "blur(0px)";
+        header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
+        // header.style.borderRadius = "0";
+        header.style.top = "0";
+        header.style.transition = "background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.25s";
+    }
         }
         window.addEventListener('scroll', handleHeaderScroll);
         window.addEventListener('DOMContentLoaded', handleHeaderScroll);
@@ -1303,9 +1303,7 @@
                 btn.style.transform = '';
             });
         });
-    </script>
-    <script>
-    // Fade-in animation on scroll for services-section and clients-section
+        // Fade-in animation on scroll for services-section and clients-section
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = { threshold: 0.2 };
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
