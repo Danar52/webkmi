@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-        content="Hubungi PT. Kenco Manufactur Indonesia untuk kerja sama, informasi produk, dan lokasi pabrik kami di Bekasi.">
+    <meta name="description" content="Hubungi PT. Kenco Manufactur Indonesia untuk kerja sama, informasi produk, dan lokasi pabrik kami di Bekasi.">
     <title>Kontak | PT. Kenco Manufactur Indonesia</title>
     <link rel="icon" type="image/png" href="assets/img/favicon_img.png" style="background: transparent;" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <style>
         /* ========== CSS RESET ========== */
@@ -58,7 +55,6 @@
             height: 48px;
             transition: transform 0.3s ease;
         }
-
         .logo:hover img {
             transform: scale(1.05);
         }
@@ -68,7 +64,6 @@
             flex-direction: column;
             cursor: pointer;
         }
-
         .hamburger div {
             width: 28px;
             height: 3px;
@@ -81,7 +76,6 @@
             display: flex;
             gap: 2.5rem;
         }
-
         nav a {
             position: relative;
             text-decoration: none;
@@ -91,7 +85,6 @@
             transition: color 0.3s ease, transform 0.2s ease;
             font-size: 1.05rem;
         }
-
         nav a::after {
             content: '';
             position: absolute;
@@ -104,12 +97,10 @@
             border-radius: 0px;
             transition: width 0.3s ease;
         }
-
         nav a:hover::after,
         nav a.active::after {
             width: 80%;
         }
-
         nav a:hover,
         nav a.active {
             color: #FFD700;
@@ -130,7 +121,6 @@
             margin: 0;
             margin-top: 0;
         }
-
         .contact-hero-header .overlay {
             position: absolute;
             top: 0;
@@ -140,7 +130,6 @@
             background: rgba(0, 0, 0, 0.45);
             z-index: 1;
         }
-
         .contact-hero-header .hero-text {
             position: relative;
             z-index: 2;
@@ -151,7 +140,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .contact-hero-header .hero-text h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -166,7 +154,6 @@
             max-width: 1200px;
             margin: 1.2rem auto;
         }
-
         .contact-hero {
             background: linear-gradient(180deg, rgba(30, 58, 138, 0.06), rgba(30, 58, 138, 0.03));
             border-radius: 10px;
@@ -174,20 +161,17 @@
             margin-bottom: 1.4rem;
             text-align: center;
         }
-
         .contact-hero .lead {
             color: #243b7a;
             margin-top: 0.5rem;
             font-size: 1rem;
         }
-
         .contact-cards .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             align-items: start;
         }
-
         .card {
             background: #fff;
             border-radius: 10px;
@@ -199,31 +183,26 @@
             flex-direction: column;
             justify-content: space-between;
         }
-
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(16, 24, 64, 0.1);
             transition: all 0.3s ease;
         }
-
         .card .icon {
             font-size: 1.7rem;
             margin-bottom: 0.6rem;
         }
-
         .card h3 {
             margin: 0 0 0.45rem 0;
             font-size: 1.05rem;
             color: #1E3A8A;
         }
-
         .card p {
             margin: 0 0 0.8rem 0;
             color: #344054;
             font-size: 0.95rem;
             line-height: 1.5;
         }
-
         .card a.btn {
             display: inline-block;
             text-decoration: none;
@@ -236,24 +215,20 @@
             font-size: 0.92rem;
             box-shadow: 0 6px 14px rgba(16, 24, 64, 0.06);
         }
-
         .card a.btn.sm {
             padding: 0.45rem 0.8rem;
             font-size: 0.88rem;
         }
-
         .card a.btn.sm:hover {
             background: linear-gradient(180deg, #FFE55A, #FFD700);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(16, 24, 64, 0.15);
             transition: all 0.25s ease;
         }
-
         .card a.btn.sm:active {
             transform: translateY(0);
             box-shadow: 0 4px 10px rgba(16, 24, 64, 0.1);
         }
-
         .contact-map .two-col {
             display: grid;
             grid-template-columns: 1fr 420px;
@@ -261,13 +236,11 @@
             align-items: start;
             margin-top: 1.6rem;
         }
-
         .map-wrapper h3,
         .office-photo h3 {
             margin-bottom: 0.6rem;
             color: #1E3A8A;
         }
-
         .map-wrapper iframe {
             width: 100%;
             height: 360px;
@@ -275,7 +248,6 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(16, 24, 64, 0.06);
         }
-
         .office-photo img {
             width: 100%;
             height: 250px;
@@ -284,18 +256,15 @@
             box-shadow: 0 8px 22px rgba(16, 24, 64, 0.06);
             display: block;
         }
-
         .office-photo .caption {
             margin-top: 0.6rem;
             font-size: 0.88rem;
             color: #556176;
         }
-
         .reveal {
             transform: translateY(40px);
             transition: transform 0.7s cubic-bezier(0.16, 0.84, 0.24, 1);
         }
-
         .reveal.active {
             transform: translateY(0);
         }
@@ -311,7 +280,6 @@
             max-width: 100%;
             overflow: hidden;
         }
-
         .footer-container {
             display: flex;
             justify-content: space-around;
@@ -320,7 +288,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .footer-info,
         .footer-links,
         .footer-social {
@@ -328,7 +295,6 @@
             padding: 1rem;
             text-align: left;
         }
-
         .footer-info h3,
         .footer-links h3,
         .footer-social h3 {
@@ -337,7 +303,6 @@
             color: #FFD700;
             font-family: 'Poppins', sans-serif;
         }
-
         .footer-info p,
         .contact-details p {
             font-size: 0.95rem;
@@ -345,26 +310,21 @@
             margin-bottom: 0.8rem;
             color: #c9d6ff;
         }
-
         .contact-details {
             margin-top: 1.5rem;
         }
-
         .contact-details p i {
             margin-right: 0.8em;
             color: #FFD700;
         }
-
         .footer-links ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-
         .footer-links ul li {
             margin-bottom: 0.8rem;
         }
-
         .footer-links ul li a {
             color: #c9d6ff;
             text-decoration: none;
@@ -372,18 +332,15 @@
             transition: color 0.3s ease, transform 0.3s ease;
             display: inline-block;
         }
-
         .footer-links ul li a:hover {
             color: #FFD700;
             transform: translateX(5px);
         }
-
         .social-media {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-
         .social-media a {
             color: #c9d6ff;
             text-decoration: none;
@@ -393,18 +350,15 @@
             align-items: center;
             font-size: 0.95rem;
         }
-
         .social-media a i {
             padding-right: 0.8em;
             font-size: 1.1rem;
             color: #FFD700;
         }
-
         .social-media a:hover {
             transform: translateX(8px);
             color: #FFD700;
         }
-
         .footer-bottom {
             flex-basis: 100%;
             text-align: center;
@@ -414,7 +368,6 @@
             color: #b0b0b0;
             font-size: 0.85rem;
         }
-
         .footer-bottom p {
             margin: 0;
             color: inherit;
@@ -422,41 +375,16 @@
 
         /* ========== KEYFRAMES & ANIMATIONS ========== */
         @keyframes blink {
-
-            0%,
-            50%,
-            100% {
-                opacity: 1;
-            }
-
-            25%,
-            75% {
-                opacity: 0;
-            }
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
         }
-
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ========== RESPONSIVE ========== */
@@ -466,19 +394,15 @@
                 max-width: calc(100% - 2rem);
                 margin: 1rem auto 0 auto;
             }
-
             nav {
                 gap: 1.5rem;
             }
-
             .contact-cards .grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .contact-map .two-col {
                 grid-template-columns: 1fr 320px;
             }
-
             .footer-container {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -487,7 +411,6 @@
                 text-align: left;
                 max-width: 100%;
             }
-
             .footer-info,
             .footer-links,
             .footer-social {
@@ -496,27 +419,22 @@
                 min-width: 0;
                 box-sizing: border-box;
             }
-
             .footer-info h3,
             .footer-links h3,
             .footer-social h3 {
                 text-align: left;
             }
-
             .contact-details p i,
             .social-media a i {
                 margin-right: 0.5em;
             }
-
             .footer-links ul li a,
             .social-media a {
                 font-size: 0.9rem;
             }
-
             .footer-links ul {
                 padding-left: 0;
             }
-
             .footer-bottom {
                 grid-column: 1 / span 3;
                 padding-top: 1.5rem;
@@ -524,16 +442,13 @@
                 text-align: center;
             }
         }
-
         @media (max-width: 768px) {
             .contact-hero-header {
                 height: 40vh;
             }
-
             .contact-hero-header .hero-text h1 {
                 font-size: 2rem;
             }
-
             header {
                 padding: 0.6rem 0.8rem;
                 top: 0.7rem;
@@ -543,31 +458,26 @@
                 justify-content: space-between;
                 gap: 1rem;
             }
-
             .logo {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin-right: 0.5rem;
             }
-
             .logo img {
                 height: 32px;
                 transition: transform 0.3s;
                 margin: 0;
             }
-
             .hamburger {
                 display: flex;
                 z-index: 1201;
                 align-items: center;
                 margin-left: 0.5rem;
             }
-
             .hamburger div {
                 transition: background 0.3s, transform 0.3s;
             }
-
             nav {
                 display: none;
                 position: absolute;
@@ -587,7 +497,6 @@
                 pointer-events: none;
                 z-index: 1200;
             }
-
             nav.active {
                 display: flex;
                 opacity: 1;
@@ -595,7 +504,6 @@
                 max-height: 500px;
                 transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
             }
-
             nav a {
                 display: block;
                 width: 100%;
@@ -608,29 +516,23 @@
                 transition: background 0.2s, color 0.2s;
                 text-align: center;
             }
-
             nav a.active,
             nav a:hover {
                 background: #233c7a;
                 color: #FFD700;
             }
-
             nav a::after {
                 display: none;
             }
-
             .contact-cards .grid {
                 grid-template-columns: 1fr;
             }
-
             .contact-map .two-col {
                 grid-template-columns: 1fr;
             }
-
             .office-photo img {
                 height: 200px;
             }
-
             .footer-container {
                 display: flex;
                 flex-direction: column;
@@ -639,7 +541,6 @@
                 text-align: center;
                 max-width: 100%;
             }
-
             .footer-info,
             .footer-links,
             .footer-social {
@@ -652,7 +553,6 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-
             .footer-info h3,
             .footer-links h3,
             .footer-social h3 {
@@ -660,28 +560,23 @@
                 margin-bottom: 0.8rem;
                 text-align: center;
             }
-
             .footer-info p,
             .contact-details p,
             .footer-links ul li a,
             .social-media a {
                 font-size: 0.9rem;
             }
-
             .footer-links ul li {
                 margin-bottom: 0.6rem;
             }
-
             .footer-links ul {
                 padding-left: 0;
             }
-
             .social-media {
                 gap: 0.7rem;
                 align-items: center;
                 justify-content: center;
             }
-
             .footer-bottom {
                 font-size: 0.8rem;
                 padding-top: 1rem;
@@ -690,7 +585,6 @@
                 text-align: center;
             }
         }
-
         @media (max-width: 480px) {
             header {
                 padding: 0.5rem 0.5rem;
@@ -701,28 +595,23 @@
                 justify-content: space-between;
                 gap: 0.7rem;
             }
-
             .logo img {
                 height: 22px;
                 margin: 0;
             }
-
             .hamburger div {
                 width: 18px;
                 margin: 2px;
             }
-
             .contact-hero-header .hero-text h1 {
                 font-size: 1.08rem;
                 margin-bottom: 0.6rem;
                 text-align: center;
                 line-height: 1.18;
             }
-
             .office-photo img {
                 height: 120px;
             }
-
             .footer-container {
                 display: flex;
                 flex-direction: column;
@@ -731,7 +620,6 @@
                 text-align: center;
                 max-width: 100%;
             }
-
             .footer-info,
             .footer-links,
             .footer-social {
@@ -744,7 +632,6 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-
             .footer-info h3,
             .footer-links h3,
             .footer-social h3 {
@@ -752,34 +639,28 @@
                 margin-bottom: 0.5rem;
                 text-align: center;
             }
-
             .footer-info p,
             .contact-details p,
             .footer-links ul li a,
             .social-media a {
                 font-size: 0.68rem;
             }
-
             .footer-links ul li {
                 margin-bottom: 0.3rem;
             }
-
             .footer-links ul {
                 padding-left: 0;
             }
-
             .social-media {
                 gap: 0.6rem;
                 align-items: center;
                 justify-content: center;
             }
-
             .footer-info,
             .footer-links,
             .footer-social {
                 text-align: center;
             }
-
             .footer-bottom {
                 font-size: 0.62rem;
                 padding-top: 0.7rem;
@@ -790,14 +671,12 @@
         }
     </style>
 </head>
-
 <body>
     <header id="main-header">
         <a href="index.html" class="logo" tabindex="0">
             <img src="assets/img/logo-kmi-removebg-preview.png" alt="PT. Kenco" />
         </a>
-        <div class="hamburger" id="hamburger-btn" onclick="toggleMenu()" tabindex="0" aria-label="Buka menu navigasi"
-            aria-expanded="false">
+        <div class="hamburger" id="hamburger-btn" onclick="toggleMenu()" tabindex="0" aria-label="Buka menu navigasi" aria-expanded="false">
             <div></div>
             <div></div>
             <div></div>
@@ -825,8 +704,7 @@
                     <div class="icon">📍</div>
                     <h3>Alamat Kantor / Pabrik</h3>
                     <p>Jl. Lambang Jaya No.9, Lambangjaya, Tambun Selatan, Bekasi, Jawa Barat 17510</p>
-                    <a class="btn sm" href="https://maps.app.goo.gl/ssV6mQKLT8jhLAae9" target="_blank"
-                        rel="noopener">Lihat di Google Maps</a>
+                    <a class="btn sm" href="https://maps.app.goo.gl/ssV6mQKLT8jhLAae9" target="_blank" rel="noopener">Lihat di Google Maps</a>
                 </div>
                 <div class="card">
                     <div class="icon">☎️</div>
@@ -864,11 +742,9 @@
         <div class="footer-container">
             <div class="footer-info">
                 <h3>PT. Kenco Manufactur Indonesia</h3>
-                <p>Mendedikasikan diri untuk presisi dan inovasi dalam setiap komponen, mendukung kemajuan industri
-                    otomotif.</p>
+                <p>Mendedikasikan diri untuk presisi dan inovasi dalam setiap komponen, mendukung kemajuan industri otomotif.</p>
                 <div class="contact-details">
-                    <p><i class="bi bi-geo-alt-fill"></i> Jl. Lambang Jaya No.9, Lambangjaya, Kec. Tambun Sel.,
-                        Kabupaten Bekasi, Jawa Barat 17510</p>
+                    <p><i class="bi bi-geo-alt-fill"></i> Jl. Lambang Jaya No.9, Lambangjaya, Kec. Tambun Sel., Kabupaten Bekasi, Jawa Barat 17510</p>
                     <p><i class="bi bi-telephone-fill"></i> (021) 123-4567</p>
                     <p><i class="bi bi-printer-fill"></i> (021) 765-4321</p>
                 </div>
@@ -977,5 +853,4 @@
         })();
     </script>
 </body>
-
 </html>
