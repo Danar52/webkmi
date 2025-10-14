@@ -41,11 +41,11 @@
         top: 0;
         z-index: 1000;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        border-radius: 0 !important;
+        border-radius: 0;
         width: 100%;
         margin: 0;
         max-width: 100%;
-        transition: background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.3s;
+        transition: background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.3s, border-radius 0.3s;
         backdrop-filter: blur(0px);
         -webkit-backdrop-filter: blur(0px);
     }
@@ -77,6 +77,7 @@
     nav {
         display: flex;
         gap: 2.5rem;
+        border-radius: 0 !important;
     }
 
     nav a {
@@ -98,7 +99,7 @@
         width: 0%;
         height: 3px;
         background-color: #FFD700;
-        border-radius: 2px;
+        border-radius: 0px;
         transition: width 0.3s ease;
     }
 
@@ -906,11 +907,7 @@
                 header.style.top = "0";
                 header.style.borderRadius = "0";
                 document.querySelectorAll('nav a').forEach(link => {
-                    if (link.matches(':hover') || link.classList.contains('active')) {
-                        link.style.color = '#FFD700';
-                    } else {
-                        link.style.color = '#fff';
-                    }
+                    link.style.color = '';
                 });
             } else {
                 // Saat posisi paling atas → latar transparan, teks putih
@@ -921,11 +918,7 @@
                 header.style.top = "0";
                 header.style.borderRadius = "0";
                 document.querySelectorAll('nav a').forEach(link => {
-                    if (link.matches(':hover') || link.classList.contains('active')) {
-                        link.style.color = '#FFD700';
-                    } else {
-                        link.style.color = '#fff';
-                    }
+                    link.style.color = '';
                 });
             }
             lastScroll = scrollY;
