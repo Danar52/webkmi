@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PT. Kenco Manufactur Indonesia</title>
     <meta name="description" content="Beranda PT. Kenco Manufactur Indonesia, profil perusahaan dan layanan unggulan.">
-    <meta name="keywords" content="PT. Kenco Manufactur Indonesia, perusahaan manufaktur, produk berkualitas, company profile, tambun, Tambun">
+    <meta name="keywords"
+        content="PT. Kenco Manufactur Indonesia, perusahaan manufaktur, produk berkualitas, company profile, tambun, Tambun">
     <meta name="author" content="PT. Kenco Manufactur Indonesia">
     <link rel="icon" type="image/png" href="assets/img/favicon_img.png" style="background: transparent;" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -35,11 +36,27 @@
     /* --- Header Section --- */
     /* --- Background Home Utility --- */
     .bg-home {
+        position: relative;
         background-image: url('assets/img/IMG_4416.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
+        --bg-darkness: 0.5;
+        /* nilai 0 (terang) - 1 (gelap) bisa diatur */
+        z-index: 0;
     }
+
+    .bg-home::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, var(--bg-darkness));
+        z-index: 0;
+    }
+
 
     header {
         background: transparent;
@@ -159,7 +176,7 @@
         position: absolute;
         left: 6%;
         bottom: 10%;
-        z-index: 2;
+        z-index: 1;
         text-align: left;
         max-width: 800px;
         animation: fadeInSmooth 1.2s ease-in-out;
@@ -353,8 +370,8 @@
 
     /* --- Button Style --- */
     .services-button {
-      margin-top: 3rem;
-      text-align: center;
+        margin-top: 3rem;
+        text-align: center;
     }
 
     .btn-primary {
@@ -371,6 +388,7 @@
         box-shadow: 0 4px 10px rgba(30, 58, 138, 0.12);
         cursor: pointer;
     }
+
     .btn-primary:hover {
         background-color: #FFD700;
         color: #1E3A8A;
@@ -449,38 +467,45 @@
 
     /* --- Animation Effects --- */
     @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
+
     @keyframes fadeInSmooth {
         from {
             opacity: 0;
             transform: translateY(10px);
         }
+
         to {
             opacity: 1;
             transform: translateY(0);
         }
     }
+
     .fade-in {
-      opacity: 0;
-      animation: fadeInUp 1.2s ease forwards;
+        opacity: 0;
+        animation: fadeInUp 1.2s ease forwards;
     }
+
     .fade-in:nth-of-type(1) {
-      animation-delay: 0.2s;
+        animation-delay: 0.2s;
     }
+
     .fade-in:nth-of-type(2) {
-      animation-delay: 0.4s;
+        animation-delay: 0.4s;
     }
+
     .fade-in.appear {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
 
     /* --- Responsive --- */
@@ -627,15 +652,19 @@
             max-width: 100%;
             margin: 0;
         }
+
         nav {
             gap: 1.5rem;
         }
+
         .hero h1 {
             font-size: 3.5rem;
         }
+
         .hero p {
             font-size: 1.2rem;
         }
+
         .about-section {
             flex-direction: column;
             padding: 3rem 2rem;
@@ -644,22 +673,26 @@
             margin: 0;
             border-radius: 0;
         }
+
         .about-content,
         .about-image {
             min-width: unset;
             max-width: 100%;
             text-align: center;
         }
+
         .about-content h2::after {
             left: 50%;
             transform: translateX(-50%);
         }
+
         .clients-section {
             margin-bottom: 0;
             margin: 0;
             border-radius: 0;
             max-width: 100%;
         }
+
         .footer-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -668,6 +701,7 @@
             text-align: left;
             max-width: 100%;
         }
+
         .footer-info,
         .footer-links,
         .footer-social {
@@ -676,22 +710,27 @@
             min-width: 0;
             box-sizing: border-box;
         }
+
         .footer-info h3,
         .footer-links h3,
         .footer-social h3 {
             text-align: left;
         }
+
         .contact-details p i,
         .social-media a i {
             margin-right: 0.5em;
         }
+
         .footer-links ul li a,
         .social-media a {
             font-size: 0.9rem;
         }
+
         .footer-links ul {
             padding-left: 0;
         }
+
         .footer-bottom {
             grid-column: 1 / span 3;
             padding-top: 1.5rem;
@@ -1169,7 +1208,7 @@
             </div>
         </div>
         <div class="services-button">
-          <a href="bisnis.html" class="btn-primary">Selengkapnya</a>
+            <a href="bisnis.html" class="btn-primary">Selengkapnya</a>
         </div>
     </section>
 
@@ -1183,7 +1222,8 @@
         <div class="clients-logos">
             <img src="https://sso.dharmap.com/static/media/banner-dashboard.6ac1333a.png" alt="Client 1">
             <img src="assets/img/client2.png" alt="Client 2">
-            <img src="https://asabametalindustri.com/wp-content/themes/pt-asaba-theme/images/footer-logo_main.png" alt="Client 3">
+            <img src="https://asabametalindustri.com/wp-content/themes/pt-asaba-theme/images/footer-logo_main.png"
+                alt="Client 3">
             <img src="assets/img/client4.png" alt="Client 4">
         </div>
     </section>
@@ -1256,18 +1296,18 @@
                 header.style.backdropFilter = "blur(8px)";
                 header.style.webkitBackdropFilter = "blur(8px)";
                 header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.13)";
-        // header.style.borderRadius = "0 0 12px 12px";
-        header.style.top = "0";
-        header.style.transition = "background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.25s";
-    } else {
-        header.style.backgroundColor = "transparent";
-        header.style.backdropFilter = "blur(0px)";
-        header.style.webkitBackdropFilter = "blur(0px)";
-        header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
-        // header.style.borderRadius = "0";
-        header.style.top = "0";
-        header.style.transition = "background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.25s";
-    }
+                // header.style.borderRadius = "0 0 12px 12px";
+                header.style.top = "0";
+                header.style.transition = "background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.25s";
+            } else {
+                header.style.backgroundColor = "transparent";
+                header.style.backdropFilter = "blur(0px)";
+                header.style.webkitBackdropFilter = "blur(0px)";
+                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
+                // header.style.borderRadius = "0";
+                header.style.top = "0";
+                header.style.transition = "background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s, top 0.25s";
+            }
         }
         window.addEventListener('scroll', handleHeaderScroll);
         window.addEventListener('DOMContentLoaded', handleHeaderScroll);
@@ -1307,19 +1347,19 @@
             });
         });
         // Fade-in animation on scroll for services-section and clients-section
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.2 };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('appear');
-            observer.unobserve(entry.target);
-        });
-    }, appearOptions);
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2 };
+        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
 
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
     </script>
 </body>
 
